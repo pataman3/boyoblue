@@ -2,24 +2,20 @@ import os
 import dj_database_url
 from decouple import config, Csv
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-SECRET_KEY = config('SECRET_KEY')
-
-DEBUG = config('DEBUG', default=False, cast=bool)
-
-ALLOWED_HOSTS = ['boyo.blue', 'boyoblue-production.herokuapp.com', 'boyoblue-staging.herokuapp.com', '127.0.0.1']
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # use local settings (such as using a local database, or turning debug on)
 try:
     from .local_settings import *
 except ImportError:
-    # only use db if running remotely
+    SECRET_KEY = config('SECRET_KEY')
+    DEBUG = config('DEBUG', default=False, cast=bool)
     DATABASES = {
         'default': dj_database_url.config(
             default=config('DATABASE_URL')
         )
     }
+    ALLOWED_HOSTS = ['boyo.blue', 'boyoblue-production.herokuapp.com', 'boyoblue-staging.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,7 +43,7 @@ ROOT_URLCONF = 'boyoblue.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'boyoblue/templates'),'templates',],
+        'DIRS': ['boyoblue/templates','templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
