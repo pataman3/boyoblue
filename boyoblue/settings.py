@@ -8,7 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['boyo.blue', 'boyoblue.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['boyo.blue', 'boyoblue-production.herokuapp.com', 'boyoblue-staging.herokuapp.com', '127.0.0.1']
 
 # use local settings (such as using a local database, or turning debug on)
 try:
