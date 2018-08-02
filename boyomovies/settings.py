@@ -8,7 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['boyodatabase.herokuapp.com']
+ALLOWED_HOSTS = ['boyo.blue']
 
 DATABASES = {
     'default': dj_database_url.config(
