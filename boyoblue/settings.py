@@ -15,7 +15,7 @@ except ImportError:
             default=config('DATABASE_URL')
         )
     }
-    ALLOWED_HOSTS = ['boyo.blue', 'boyoblue-production.herokuapp.com', 'boyoblue-staging.herokuapp.com']
+    ALLOWED_HOSTS = ['boyo.blue', 'beta.boyo.blue', 'boyoblue-production.herokuapp.com', 'boyoblue-staging.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
