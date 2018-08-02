@@ -1,0 +1,24 @@
+{% extends 'reviews/reviews.html' %}
+{% block title %}BOYO DB / REVIEWS{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-dark">
+  <div class="list-group">
+    {% if reviews %}
+      {% for review in reviews %}
+      <a href="{% url 'reviews:detail' review.id %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Movie ID = {{ review.movie_id }}</h5>
+          <small>posted on {{ review.date }} by {{ review.author }}</small>
+        </div>
+        <p class="mb-1">Score : {{ review.score }}/10</p>
+        <p class="mb-1">{{ review.title }}</p>
+        <p class="mb-1">{{ review.body }}</p>
+      </a>
+      {% endfor %}
+    {% else %}
+      <h1>There are no reviews to display</h1>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
