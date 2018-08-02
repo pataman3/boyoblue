@@ -1,1 +1,1 @@
-web: gunicorn boyomovies.wsgi --log-file -
+web: gunicorn boyoblue.wsgi --log-file -

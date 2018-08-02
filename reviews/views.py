@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from . import forms
 
 def review_list_view(request):
-  reviews = Review.objects.all().order_by('date')
+  reviews = Review.objects.all().order_by('date')[:10][::-1]
   return render(request, 'reviews/list.html', {'reviews': reviews})
 
 def review_detail_view(request, id):

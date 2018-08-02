@@ -2,7 +2,7 @@ from django.urls import include, path
 from django.contrib import admin
 from reviews import views as review_views
 
-app_name = "boyomovies"
+app_name = "boyoblue"
 
 urlpatterns = [
     path('admin/', admin.site.urls),

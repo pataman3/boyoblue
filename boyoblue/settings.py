@@ -37,12 +37,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'boyomovies.urls'
+ROOT_URLCONF = 'boyoblue.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'boyomovies/templates'),'templates',],
+        'DIRS': [os.path.join(BASE_DIR, 'boyoblue/templates'),'templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -55,7 +55,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'boyomovies.wsgi.application'
+WSGI_APPLICATION = 'boyoblue.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
