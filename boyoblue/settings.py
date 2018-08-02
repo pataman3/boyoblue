@@ -8,13 +8,18 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['boyo.blue', 'boyoblue.herokuapp.com']
+ALLOWED_HOSTS = ['boyo.blue', 'boyoblue.herokuapp.com', '127.0.0.1']
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+# use local settings (such as using a local database, or turning debug on)
+try:
+    from .local_settings import *
+except ImportError:
+    # only use db if running remotely
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
 
 INSTALLED_APPS = [
     'django.contrib.admin',
