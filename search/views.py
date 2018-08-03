@@ -8,7 +8,7 @@ def search_view(request):
   media = request.GET.get("media")
   query = request.GET.get("q")
 
-  if media == 'Music':
+  if media == 'songs':
     return search_songs_view(request, query)
   elif media == 'movies':
     return search_movies_view(request, query)
