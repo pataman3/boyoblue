@@ -8,7 +8,9 @@
         {% for result in results %}
           <div class="card col-md-6">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">"{{ result.name }}" by {{ result.artist }}</li>
+              <li class="list-group-item">
+                <a href="/reviews/create/song/{{result.api_id}}">"{{ result.name }}" by {{ result.artist }}</a>
+              </li>
             </ul>
             <iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ result.api_id }}" width=100% height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </div>

@@ -13,7 +13,7 @@ def review_detail_view(request, api_id):
   return render(request, 'reviews/detail.html', {'review': review})
 
 @login_required(login_url='accounts:login')
-def review_create_view(request):
+def review_create_view(request, api_id="", type=None):
   if request.method == 'POST':
     form = forms.CreateReview(request.POST)
     if form.is_valid():
@@ -22,5 +22,5 @@ def review_create_view(request):
       instance.save()
       return redirect('home')
   elif request.method == 'GET':
-    form = forms.CreateReview()
+    form = forms.CreateReview({'api_id': api_id, 'type': type})
   return render(request, 'reviews/create.html', {'form': form})
