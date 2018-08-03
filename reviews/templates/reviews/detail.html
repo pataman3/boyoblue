@@ -11,7 +11,7 @@
     <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BMTU3MTQyNjQwM15BMl5BanBnXkFtZTgwNDgxNDczNTM@._V1_UX182_CR0,0,182,268_AL_.jpg">
     {% endif %}
     {% if review.type == 'song' %}
-    <iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ review.api_id }}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ review.api_id }}" width=100% height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     {% endif %}
     <div class="card-body">
       <h5 class="card-title">{{ review.title }}</h5>
