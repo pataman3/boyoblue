@@ -6,6 +6,7 @@
   <div class="list-group">
     {% if results %}
       {% for result in results %}
+        <p>{{ result.name }} by {{ result.artist }}</p>
       {% endfor %}
     {% else %}
       <h1>No results found</h1>
