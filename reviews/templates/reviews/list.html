@@ -6,9 +6,9 @@
   <div class="list-group">
     {% if reviews %}
       {% for review in reviews %}
-      <a href="{% url 'reviews:detail' review.id %}" class="list-group-item list-group-item-action flex-column align-items-start">
+      <a href="{% url 'reviews:detail' review.api_id %}" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Movie ID = {{ review.movie_id }}</h5>
+          <h5 class="mb-1">Movie ID = {{ review.api_id }}</h5>
           <small>posted on {{ review.date }} by {{ review.author }}</small>
         </div>
         <p class="mb-1">Score : {{ review.score }}/10</p>

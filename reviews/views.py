@@ -8,8 +8,8 @@ def review_list_view(request):
   reviews = Review.objects.all().order_by('date')[:10][::-1]
   return render(request, 'reviews/list.html', {'reviews': reviews})
 
-def review_detail_view(request, id):
-  review = get_object_or_404(Review, pk=id)
+def review_detail_view(request, api_id):
+  review = get_object_or_404(Review, api_id=api_id)
   return render(request, 'reviews/detail.html', {'review': review})
 
 @login_required(login_url='accounts:login')
