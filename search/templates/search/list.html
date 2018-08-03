@@ -1,0 +1,15 @@
+{% extends 'reviews/reviews.html' %}
+{% block title %} / All reviews{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-dark">
+  <div class="list-group">
+    {% if results %}
+      {% for result in results %}
+      {% endfor %}
+    {% else %}
+      <h1>No results found</h1>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

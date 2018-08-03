@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def search_list_view(request):
+  return render(request, 'search/list.html', {'results': []})
