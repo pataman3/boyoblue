@@ -1,11 +1,12 @@
+{% load gravatar %}
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="col-sm-3">
+    <div class="col-sm-4">
       <a href="{% url 'home' %}" class="navbar-brand">BoyoBlue</a>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <form action="/search/" method="get">
-        <div class="input-group input-group-sm">
+        <div class="input-group">
             <div class="input-group-prepend">
               <select class="custom-select" name="media">
                 <option value="songs" selected>Songs</option>
@@ -16,41 +17,50 @@
             <div class="input-group-append">
               <button class="btn btn-success" type="submit" id="button-addon2">
                 <i class="fas fa-search" style="font-size: 12px; margin-right: 2px;"></i>
-                search
+                Search
               </button>
             </div>
         </div>
       </form>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
       <ul class="nav navbar-nav justify-content-end">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">
-            <i class="fas fa-user" style="font-size: 14px; margin-right: 3px;"></i>
-            {% if user.is_authenticated %}
-              {{ user }}
-            {% else %}
-              my account
-            {% endif %}
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <!-- <a class="dropdown-item" href="">watching</a> -->
-            <!-- <a class="dropdown-item" href="">completed</a> -->
-            <!-- <a class="dropdown-item" href="">plan to watch</a> -->
-            <!-- <div class="dropdown-divider"></div> -->
-            {% if user.is_authenticated %}
-              <a class="dropdown-item" href="{% url 'reviews:create' %}">create review</a>
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
+              <img class="rounded gravatar" src="{% gravatar_url user.email 40 %}"/>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/users/{{ user.username }}">
+                Signed in as
+                {% if user.first_name or user.last_name %}
+                  <b> {{ user.first_name }} {{ user.last_name }}</b>
+                {% else %}
+                  <b> {{ user.username }}</b>
+                {% endif %}
+              </a>
+              {% if not user.is_authenticated %}
+                <p>Your account is unverified.</p>
+              {% endif %}
               <div class="dropdown-divider"></div>
-              <form action="{% url 'accounts:logout' %}" method="post">
-                {% csrf_token %}
-                <button type="submit" class="dropdown-item btn btn-primary">log out</button>
-              </form>
-            {% else %}
-              <a class="dropdown-item" href="{% url 'accounts:signup' %}">sign up</a>
-              <a class="dropdown-item" href="{% url 'accounts:login' %}">log in</a>
-            {% endif %}
-          </div>
-        </li>
+              <h6 class="dropdown-header">Your lists</h6>
+              <a class="dropdown-item" href="">Completed</a>
+              <a class="dropdown-item" href="">Watching</a>
+              <a class="dropdown-item" href="">Plan to watch</a>
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">Actions</h6>
+              <a class="dropdown-item" href="{% url 'reviews:create' %}">Create review</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="">Account settings</a>
+              <a class="dropdown-item text-danger" href="{% url 'account_logout' %}">Logout</a>
+            </div>
+          </li>
+        {% else %}
+          <li class="nav-item active">
+            <a role="button" class="btn btn-dark" href="{% url 'account_login' %}">Log in</a>
+            <a role="button" class="btn btn-primary" href="{% url 'account_signup' %}">Sign up</a>
+          </li>
+        {% endif %}
       </ul>
     </div>
   </div>
