@@ -2,6 +2,4 @@
 .idea
 .vscode/*
 db.sqlite3
-config.py
-keys.py
 local_settings.py
