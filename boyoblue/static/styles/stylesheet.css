@@ -25,3 +25,10 @@
   margin: 0px;
   padding: 0px;
 }
+
+.navbar a.navbar-brand {
+  color: #639bff;
+  line-height: 40px;
+  font-size: 26px;
+  font-family: 'Roboto Mono', sans-serif;
+}

@@ -1,8 +1,12 @@
 {% load gravatar %}
+{% load static %}
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="col-sm-4">
-      <a href="{% url 'home' %}" class="navbar-brand">BoyoBlue</a>
+      <a href="{% url 'home' %}" class="navbar-brand navbar-brand-boyoblue">
+        <img src="/static/images/logo.svg" width="40" height="40" class="d-inline-block align-top">
+        BoyoBlue
+      </a>
     </div>
     <div class="col-sm-4">
       <form action="/search/" method="get">
@@ -59,7 +63,7 @@
           </li>
         {% else %}
           <li class="nav-item active">
-            <a role="button" class="btn btn-dark" href="{% url 'account_login' %}"><i class="fas fa-sign-in-alt"></i>Log in</a>
+            <a role="button" class="btn btn-outline-light" href="{% url 'account_login' %}"><i class="fas fa-sign-in-alt"></i>Log in</a>
             <a role="button" class="btn btn-primary" href="{% url 'account_signup' %}"><i class="fas fa-user-plus"></i>Sign up</a>
           </li>
         {% endif %}
