@@ -3,22 +3,14 @@
 
 {% block content %}
 <div class="container-fluid bg-dark">
-  <div class="list-group">
-    {% if reviews %}
-      {% for review in reviews %}
-      <a href="{% url 'reviews:detail' review.api_id %}" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Movie ID = {{ review.api_id }}</h5>
-          <small>posted on {{ review.date }} by {{ review.author }}</small>
-        </div>
-        <p class="mb-1">Score : {{ review.score }}/10</p>
-        <p class="mb-1">{{ review.title }}</p>
-        <p class="mb-1">{{ review.body }}</p>
-      </a>
-      {% endfor %}
-    {% else %}
-      <h1>There are no reviews to display</h1>
-    {% endif %}
+  {% if reviews %}
+  <div class="row">
+    {% for review, review_card, media in reviews %}
+    {% include review_card %}
+    {% endfor %}
   </div>
+  {% else %}
+  <h1>There are no reviews to display</h1>
+  {% endif %}
 </div>
 {% endblock %}

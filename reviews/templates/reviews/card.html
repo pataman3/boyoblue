@@ -1,0 +1,14 @@
+<div class="card col-md-6">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      {% block title %}
+      {% endblock %}
+      <small>posted on {{ review.date }} by {{ review.author }}</small>
+    </li>
+  </ul>
+  <p class="mb-1">Score : {{ review.score }}/10</p>
+  <p class="mb-1">{{ review.title }}</p>
+  <p class="mb-1">{{ review.body }}</p>
+  {% block additional-html %}
+  {% endblock %}
+</div>
