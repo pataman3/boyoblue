@@ -2,31 +2,28 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Review
 from django.contrib.auth.decorators import login_required
-from boyoblue.media import songs, movies
+from boyoblue.media import medias
 from . import forms
 
 def review_list_view(request):
   reviews = []
   for review in Review.objects.all().order_by('date')[:10][::-1]:
-    reviews.append([review, 'reviews/mediacards/{}.html'.format(review.type)])
-    if review.type == 'song':
-      reviews[-1].append(songs.get(review.api_id))
-    elif review.type == 'movie':
-      reviews[-1].append(movies.get(review.api_id))
-    else:
+    media = medias.get(review.type, review.api_id)
+    if media is None:
       return HttpResponseNotFound
-    reviews[-1].append(review.body[:140] + ' ... (See full review)' if len(review.body) >= 140 else review.body)
-
+    reviews.append([
+      review,  # review
+      'reviews/mediacards/{}.html'.format(review.type),  # review_card
+      media,  # media
+      review.body[:140] + ' ... (See full review)' if len(review.body) >= 140 else review.body  # body
+    ])
   return render(request, 'reviews/list.html', {'reviews': reviews})
 
 def review_detail_view(request, pk):
   review = get_object_or_404(Review, pk=pk)
   card = 'reviews/mediacards/{}.html'.format(review.type)
-  if review.type == 'song':
-    media = songs.get(review.api_id)
-  elif review.type == 'movie':
-    media = movies.get(review.api_id)
-  else:
+  media = medias.get(review.type, review.api_id)
+  if media is None:
     return HttpResponseNotFound
   return render(request, 'reviews/detail.html', {
     'review': review,

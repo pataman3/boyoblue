@@ -18,7 +18,7 @@ def parse_api_call(movie):
   return Movie(
     title=movie.title,
     api_id=movie.id,
-    poster_image='https://image.tmdb.org/t/p/w200/' + movie.poster_path
+    poster_image='https://image.tmdb.org/t/p/w200/' + movie.poster_path if movie.poster_path is not None else ''
   )
 
 
