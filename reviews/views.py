@@ -21,7 +21,19 @@ def review_list_view(request):
 
 def review_detail_view(request, pk):
   review = get_object_or_404(Review, pk=pk)
-  return render(request, 'reviews/detail.html', {'review': review})
+  card = 'reviews/mediacards/{}.html'.format(review.type)
+  if review.type == 'song':
+    media = songs.get(review.api_id)
+  elif review.type == 'movie':
+    media = movies.get(review.api_id)
+  else:
+    return HttpResponseNotFound
+  return render(request, 'reviews/detail.html', {
+    'review': review,
+    'media': media,
+    'card': card,
+    'body': review.body
+  })
 
 @login_required(login_url='accounts:login')
 def review_create_view(request, api_id="", type=None):

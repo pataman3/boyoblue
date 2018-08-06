@@ -2,15 +2,21 @@
 {% block title %} / All reviews{% endblock %}
 
 {% block content %}
+
 <div class="container-fluid bg-dark">
   {% if reviews %}
   <div class="row">
     {% for review, review_card, media, body in reviews %}
-    {% include review_card %}
+    <div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <a href="{% url 'reviews:detail' review.id %}">
+        {% include review_card %}
+      </a>
+    </div>
     {% endfor %}
   </div>
   {% else %}
   <h1>There are no reviews to display</h1>
   {% endif %}
 </div>
+
 {% endblock %}

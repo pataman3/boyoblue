@@ -1,21 +1,17 @@
-<div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-  <a href="{% url 'reviews:detail' review.id %}">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <h4>{{ review.score }}/10: {{ review.title }}</h4>
-        <p>Review of
-          {% block title %}
-          {% endblock %}
-        </p>
-        <small>posted on {{ review.date }} by {{ review.author }}</small>
-      </li>
-      <li class="list-group-item">
-        {% block additional-html %}
-        {% endblock %}
-      </li>
-      <li class="list-group-item">
-        <p class="mb-1">{{ body }}</p>
-      </li>
-    </ul>
-  </a>
-</div>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <h4>{{ review.score }}/10: {{ review.title }}</h4>
+    <p>Review of
+      {% block title %}
+      {% endblock %}
+    </p>
+    <small>posted on {{ review.date }} by {{ review.author }}</small>
+  </li>
+  <li class="list-group-item">
+    {% block additional-html %}
+    {% endblock %}
+  </li>
+  <li class="list-group-item">
+    <p class="mb-1">{{ body }}</p>
+  </li>
+</ul>
