@@ -7,7 +7,7 @@ def search_view(request):
   query = request.GET.get("q")
 
   if media == 'songs':
-    return render(request, 'search/songs.html', {'songs': songs.search(query, limit=10)})
+    return render(request, 'search/songs.html', {'results': songs.search(query, limit=10)})
   elif media == 'movies':
     return render(request, 'search/movies.html', {'movies': movies.search(query, limit=10)})
   else:

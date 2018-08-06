@@ -1,23 +1,13 @@
-{% extends 'reviews/reviews.html' %}
-{% block title %} / All reviews{% endblock %}
+{% extends 'search/list.html' %}
 
-{% block content %}
-  <div class="container bg-dark">
-    {% if songs %}
-      <div class="row">
-        {% for song in songs %}
-          <div class="card col-md-6">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <a href="/reviews/create/song/{{song.api_id}}">"{{ song.name }}" by {{ song.artist }}</a>
-              </li>
-            </ul>
-            <iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ song.api_id }}" width=100% height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          </div>
-        {% endfor %}
-      </div>
-    {% else %}
-      <h1>No results found</h1>
-    {% endif %}
-  </div>
+{% block card %}
+<div class="card col-md-6">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a href="/reviews/create/song/{{song.api_id}}">"{{ result.name }}" by {{ result.artist }}</a>
+    </li>
+  </ul>
+  <iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ result.api_id }}" width=100% height="80"
+          frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
 {% endblock %}

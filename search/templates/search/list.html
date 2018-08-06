@@ -1,0 +1,17 @@
+{% extends 'reviews/reviews.html' %}
+{% block title %} / All reviews{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-dark">
+  {% if results %}
+  <div class="row">
+    {% for result in results %}
+    {% block card %}
+    {% endblock %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <h1>No results</h1>
+  {% endif %}
+</div>
+{% endblock %}
