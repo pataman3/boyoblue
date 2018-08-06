@@ -4,5 +4,6 @@
 "{{ media.name }}" by {{ media.artist }}
 {% endblock %}
 {% block additional-html %}
-<iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ media.api_id }}" width=100% height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ media.api_id }}" width=100% height="80" frameborder="0"
+        allowtransparency="true"></iframe>
 {% endblock %}

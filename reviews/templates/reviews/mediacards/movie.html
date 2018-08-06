@@ -1,7 +1,10 @@
 {% extends 'reviews/card.html' %}
 
 {% block title %}
-Movie {{ review.api_id }}
+{{ media.title }}
 {% endblock %}
 {% block additional-html %}
+<div class="text-center">
+  <img src="{{ media.poster_image }}" class="rounded">
+</div>
 {% endblock %}
