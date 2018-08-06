@@ -5,7 +5,7 @@
 <div class="container-fluid bg-dark">
   {% if reviews %}
   <div class="row">
-    {% for review, review_card, media in reviews %}
+    {% for review, review_card, media, body in reviews %}
     {% include review_card %}
     {% endfor %}
   </div>

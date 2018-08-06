@@ -15,6 +15,7 @@ def review_list_view(request):
       reviews[-1].append(movies.get(review.api_id))
     else:
       return HttpResponseNotFound
+    reviews[-1].append(review.body[:140] + ' ... (See full review)' if len(review.body) >= 140 else review.body)
 
   return render(request, 'reviews/list.html', {'reviews': reviews})
 
