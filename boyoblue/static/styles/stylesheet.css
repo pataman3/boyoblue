@@ -1,34 +1,141 @@
-.navbar .dropdown-item, .navbar .dropdown-header, .navbar p {
-  font-size: 12px;
-  line-height: 24px;
-  border: 0px;
-  margin: 0px;
-  padding: 0 12px 0 12px;
+html, body {
+  height: 100%;
+}
+.wrapper {
+  width: 100%;
+
+  display: grid;
+  grid-template-areas: ". . . . ."
+                       ". header header header. "
+                       ". . . . ."
+                       ". . main . ."
+                       ". . footer . .";
+  grid-template-columns: 30px 1fr 900px 1fr 30px;
+  grid-template-rows: 10px 35px 10px 1fr 50px;
+
+  background-color: #343a40;
 }
 
-.navbar .dropdown-header {
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: bold;
+.header {
+  grid-area: header;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "header_logo header_brand header_search header_account";
+  grid-template-columns: repeat(2, max-content) 1fr max-content;
+
+  background-color: #343a40;
+}
+#header_logo { grid-area: header_logo; }
+#header_brand { grid-area: header_brand; }
+#header_search {
+  grid-area: header_search;
+  display: grid;
+  grid-template-areas: "search_select search_text search_submit";
+  grid-template-columns: max-content 1fr max-content;
+}
+#header_account { grid-area: header_account; }
+#search_select { grid-area: search_select; }
+#search_text { grid-area: search_text; }
+#search_submit { grid-area: search_submit; }
+
+.footer {
+  grid-area: footer;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: ". footer_credit footer_terms .";
+  grid-template-columns: 1fr repeat(2, max-content) 1fr;
+
+  background-color: #343a40;
+}
+#footer_credit { grid-area: footer_credit; }
+#footer_terms { grid-area: footer_terms; }
+
+.main {
+  grid-area: main;
+
+  background-color: #343a40;
 }
 
-.navbar p {
-  font-size: 11px;
-  line-height: 14px;
-}
-
-.navbar i {
-  margin-right: 8px;
-}
-
-.navbar .dropdown-toggle {
-  margin: 0px;
-  padding: 0px;
-}
-
-.navbar a.navbar-brand {
-  color: #639bff;
-  line-height: 40px;
-  font-size: 26px;
+#header_brand a {
+  display: block;
   font-family: 'Roboto Mono', sans-serif;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: none;
+  color: #639bff;
+  line-height: 35px;
+  font-size: 24px;
+}
+#header_brand:focus, #header_brand:hover {
+  text-shadow: -4px 4px 0px #5b6ee1;
+}
+.header i {
+  margin-right: 6px;
+}
+.header button, .header input[type="text"], .header select {
+  border: 0px;
+  transition: all 0.125s ease-in-out;
+  background-color: #FAFAFA;
+  padding: 0 10px 0 10px;
+  height: 35px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: none;
+  line-height: 35px;
+  font-size: 14px;
+}
+.header select, .header button {
+  background-color: #639bff;
+  color: #FAFAFA;
+}
+#search_select{
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+#search_submit {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+#account_login, #account_signup {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: none;
+  background-color: #639bff;
+  color: #FAFAFA;
+  line-height: 35px;
+  font-size: 14px;
+  border: 0px;
+  transition: all 0.125s ease-in-out;
+  padding: 0 10px 0 10px;
+  border-radius: 6px;
+  float: left;
+}
+.header button:focus, .header button:hover, .header select:focus, .header select:hover {
+  background-color: #5b6ee1;
+}
+#account_login {
+  background-color: #343a40;
+  margin-right: 5px;
+}
+#account_login:focus, #account_login:hover {
+  background-color: #FAFAFA;
+  color: #343a40;
+}
+#account_signup:focus, #account_signup:hover {
+  background-color: #5b6ee1;
+}
+
+.footer p {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: none;
+  color: #FAFAFA;
+  line-height: 50px;
+  font-size: 12px;
 }
