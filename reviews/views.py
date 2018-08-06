@@ -18,8 +18,8 @@ def review_list_view(request):
 
   return render(request, 'reviews/list.html', {'reviews': reviews})
 
-def review_detail_view(request, api_id):
-  review = get_object_or_404(Review, api_id=api_id)
+def review_detail_view(request, pk):
+  review = get_object_or_404(Review, pk=pk)
   return render(request, 'reviews/detail.html', {'review': review})
 
 @login_required(login_url='accounts:login')
