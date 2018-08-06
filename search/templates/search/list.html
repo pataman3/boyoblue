@@ -6,8 +6,10 @@
   {% if results %}
   <div class="row">
     {% for result in results %}
-    {% block card %}
-    {% endblock %}
+    <div class="card col-md-6">
+      {% block card %}
+      {% endblock %}
+    </div>
     {% endfor %}
   </div>
   {% else %}
