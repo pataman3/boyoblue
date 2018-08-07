@@ -162,8 +162,7 @@ html, body {
   background-color: #343a40;
 }
 
-.footer p {
-  display: block;
+.footer p, .footer_github {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   text-align: left;
@@ -171,6 +170,10 @@ html, body {
   color: #FAFAFA;
   line-height: 50px;
   font-size: 12px;
+}
+.footer_github:focus, .footer_github:hover {
+  color: #639bff;
+  text-decoration: underline dotted #639bff;
 }
 
 .card {
