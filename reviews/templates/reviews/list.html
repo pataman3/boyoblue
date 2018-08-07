@@ -2,11 +2,13 @@
 {% block title %} / All reviews{% endblock %}
 
 {% block body %}
-  {% if reviews %}
-    {% for review, review_card, media, body in reviews %}
-      {% include review_card %}
-    {% endfor %}
-  {% else %}
-    <h1>There are no reviews to display</h1>
-  {% endif %}
+  <div class="list_content">
+    {% if reviews %}
+      {% for review, review_card, media, body in reviews %}
+        {% include review_card %}
+      {% endfor %}
+    {% else %}
+      <h1>There are no reviews to display</h1>
+    {% endif %}
+  </div>
 {% endblock %}

@@ -64,7 +64,8 @@ html, body {
   grid-area: main;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, 440px);
+  grid-template-areas: ". content .";
+  grid-template-columns: 1fr max-content 1fr;
 
   background-color: #343a40;
 }
@@ -152,6 +153,15 @@ html, body {
   float: right;
 }
 
+.list_content {
+  grid-area: content;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 440px);
+
+  background-color: #343a40;
+}
+
 .footer p {
   display: block;
   font-family: 'Roboto', sans-serif;
@@ -189,7 +199,7 @@ html, body {
   grid-gap: 10px;
   grid-template-areas: "r_l_movie_card_media r_l_movie_card_title"
                        "r_l_movie_card_media r_l_movie_card_text";
-  grid-template-columns: 120px 290px;
+  grid-template-columns: 120px 285px;
   grid-template-rows: 24px 1fr;
 }
 .r_l_movie_card_media {
@@ -208,7 +218,7 @@ html, body {
   grid-template-areas: "r_l_song_card_title"
                        "r_l_song_card_text"
                        "r_l_song_card_media ";
-  grid-template-columns: 420px;
+  grid-template-columns: 415px;
   grid-template-rows: 24px 1fr 80px;
 }
 .r_l_song_card_media {

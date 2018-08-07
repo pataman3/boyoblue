@@ -2,12 +2,14 @@
 {% block title %} / All reviews{% endblock %}
 
 {% block body %}
-  {% if results %}
-    {% for result in results %}
-      {% block result_card %}
-      {% endblock %}
-    {% endfor %}
-  {% else %}
-    <h1>There are no results to display</h1>
-  {% endif %}
+  <div class="list_content">
+    {% if results %}
+      {% for result in results %}
+        {% block result_card %}
+        {% endblock %}
+      {% endfor %}
+    {% else %}
+      <h1>There are no results to display</h1>
+    {% endif %}
+  </div>
 {% endblock %}
