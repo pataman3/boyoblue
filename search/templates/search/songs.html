@@ -1,13 +1,12 @@
 {% extends 'search/list.html' %}
 
-{% block card %}
-<div class="card col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="/reviews/create/song/{{result.api_id}}">"{{ result.name }}" by {{ result.artist }}</a>
-    </li>
-  </ul>
-  <iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ result.api_id }}" width=100% height="80"
-          frameborder="0" allowtransparency="true"></iframe>
-</div>
+{% block result_card %}
+  <div class="s_l_song_card card">
+    <div class="s_l_song_card_media">
+      <iframe src="https://open.spotify.com/embed?uri=spotify:track:{{ result.api_id }}" width="80px" height="80px"></iframe>
+    </div>
+    <div class="s_l_song_card_title">
+      <a class="text s_l_card_title" href="/reviews/create/song/{{result.api_id}}">"{{ result.name }}" by {{ result.artist }}</a>
+    </div>
+  </div>
 {% endblock %}

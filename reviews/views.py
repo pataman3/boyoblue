@@ -13,7 +13,7 @@ def review_list_view(request):
       return HttpResponseNotFound
     reviews.append([
       review,  # review
-      'reviews/mediacards/{}.html'.format(review.type),  # review_card
+      'reviews/media/{}.html'.format(review.type),  # review_card
       media,  # media
       review.body[:140] + ' ... (See full review)' if len(review.body) >= 140 else review.body  # body
     ])
@@ -21,7 +21,7 @@ def review_list_view(request):
 
 def review_detail_view(request, pk):
   review = get_object_or_404(Review, pk=pk)
-  card = 'reviews/mediacards/{}.html'.format(review.type)
+  card = 'reviews/media/{}.html'.format(review.type)
   media = medias.get(review.type, review.api_id)
   if media is None:
     return HttpResponseNotFound

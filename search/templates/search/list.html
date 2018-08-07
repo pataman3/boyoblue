@@ -1,17 +1,13 @@
-{% extends 'reviews/reviews.html' %}
+{% extends 'boyoblue/core.html' %}
 {% block title %} / All reviews{% endblock %}
 
-{% block content %}
-<div class="container-fluid bg-dark">
+{% block body %}
   {% if results %}
-  <div class="row">
     {% for result in results %}
-    {% block card %}
-    {% endblock %}
+      {% block result_card %}
+      {% endblock %}
     {% endfor %}
-  </div>
   {% else %}
-  <h1>No results</h1>
+    <h1>There are no results to display</h1>
   {% endif %}
-</div>
 {% endblock %}

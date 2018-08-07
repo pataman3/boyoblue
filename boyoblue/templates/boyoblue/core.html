@@ -14,8 +14,12 @@
 </head>
 <body style="background-color: #343a40;">
   <section class="wrapper">
-    {% block body %}
-    {% endblock %}
+    {% include 'boyoblue/header.html' %}
+    <main class="main">
+      {% block body %}
+      {% endblock %}
+    </main>
+    {% include 'boyoblue/footer.html' %}
   </section>
 </body>
 </html>

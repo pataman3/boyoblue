@@ -1,3 +1,13 @@
+.text {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+}
+
 html, body {
   height: 100%;
 }
@@ -5,12 +15,12 @@ html, body {
   width: 100%;
 
   display: grid;
-  grid-template-areas: ". . . . ."
-                       ". header header header. "
-                       ". . . . ."
-                       ". . main . ."
-                       ". . footer . .";
-  grid-template-columns: 30px 1fr 900px 1fr 30px;
+  grid-template-areas: ". . ."
+                       ". header ."
+                       ". . ."
+                       ". main ."
+                       ". footer .";
+  grid-template-columns: 20px 1fr 20px;
   grid-template-rows: 10px 35px 10px 1fr 50px;
 
   background-color: #343a40;
@@ -52,6 +62,9 @@ html, body {
 
 .main {
   grid-area: main;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 440px);
 
   background-color: #343a40;
 }
@@ -98,7 +111,7 @@ html, body {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
-#account_login, #account_signup {
+#account_login, #account_signup, #account_settings, #account_logout {
   display: block;
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
@@ -125,8 +138,18 @@ html, body {
   background-color: #FAFAFA;
   color: #343a40;
 }
-#account_signup:focus, #account_signup:hover {
+#account_signup:focus, #account_signup:hover, #account_settings:focus, #account_settings:hover, #account_logout:focus, #account_logout:hover {
   background-color: #5b6ee1;
+}
+#account_settings {
+  margin-right: 5px;
+}
+.gravatar {
+  border-radius: 6px;
+  margin-right: 5px;
+}
+#account_logout {
+  float: right;
 }
 
 .footer p {
@@ -138,4 +161,96 @@ html, body {
   color: #FAFAFA;
   line-height: 50px;
   font-size: 12px;
+}
+
+.card {
+  background-color: #FAFAFA;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+}
+.r_l_card_title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+.r_l_card_text {
+  font-size: 14px;
+  line-height: 14px;
+}
+.s_l_card_title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.r_l_movie_card {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "r_l_movie_card_media r_l_movie_card_title"
+                       "r_l_movie_card_media r_l_movie_card_text";
+  grid-template-columns: 120px 290px;
+  grid-template-rows: 24px 1fr;
+}
+.r_l_movie_card_media {
+  grid-area: r_l_movie_card_media;
+}
+.r_l_movie_card_title {
+  grid-area: r_l_movie_card_title;
+}
+.r_l_movie_card_text {
+  grid-area: r_l_movie_card_text;
+}
+
+.r_l_song_card {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "r_l_song_card_title"
+                       "r_l_song_card_text"
+                       "r_l_song_card_media ";
+  grid-template-columns: 420px;
+  grid-template-rows: 24px 1fr 80px;
+}
+.r_l_song_card_media {
+  grid-area: r_l_song_card_media;
+}
+.r_l_song_card_title {
+  grid-area: r_l_song_card_title;
+}
+.r_l_song_card_text {
+  grid-area: r_l_song_card_text;
+}
+
+.s_l_movie_card {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "s_l_movie_card_media s_l_movie_card_title";
+  grid-template-columns: 107px 1fr;
+  grid-template-rows: 160px;
+}
+.s_l_movie_card_media {
+  grid-area: s_l_movie_card_media;
+}
+.s_l_movie_card_title {
+  grid-area: s_l_movie_card_title;
+}
+.s_l_movie_card_text {
+  grid-area: s_l_movie_card_text;
+}
+
+.s_l_song_card {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "s_l_song_card_media s_l_song_card_title";
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 80px;
+}
+.s_l_song_card_media {
+  grid-area: s_l_song_card_media;
+}
+.s_l_song_card_title {
+  grid-area: s_l_song_card_title;
+}
+.s_l_song_card_text {
+  grid-area: s_l_song_card_text;
 }

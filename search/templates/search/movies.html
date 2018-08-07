@@ -1,14 +1,12 @@
 {% extends 'search/list.html' %}
 
-{% block card %}
-<div class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="/reviews/create/movie/{{result.api_id}}">{{ result.title }}</a>
-    </li>
-  </ul>
-  <div class="text-center">
-    <img src="{{ result.poster_image }}" class="rounded">
+{% block result_card %}
+  <div class="s_l_movie_card card">
+    <div class="s_l_movie_card_media">
+      <img src="{{ result.poster_image }}" height="160px" width="107px">
+    </div>
+    <div class="s_l_movie_card_title">
+      <a class="text s_l_card_title" href="/reviews/create/movie/{{result.api_id}}">{{ result.title }}</a>
+    </div>
   </div>
-</div>
 {% endblock %}
