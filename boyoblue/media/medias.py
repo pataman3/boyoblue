@@ -1,10 +1,12 @@
-from . import movies, songs
+from . import movies, songs, books
 
 def get(media_type, api_key):
   if media_type == 'song':
     return songs.get(api_key)
   elif media_type == 'movie':
     return movies.get(api_key)
+  elif media_type == 'book':
+    return books.get(api_key)
   else:
     return None
 
@@ -13,5 +15,7 @@ def search(media_type, query):
     return songs.search(query, limit=15)
   elif media_type == 'movies':
     return movies.search(query, limit=20)
+  elif media_type == 'books':
+    return books.search(query, limit=20)
   else:
     return None

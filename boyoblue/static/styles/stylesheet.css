@@ -251,6 +251,23 @@ html, body {
   grid-area: s_l_movie_card_text;
 }
 
+.s_l_book_card {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "s_l_book_card_media s_l_book_card_title";
+  grid-template-columns: 107px 1fr;
+  grid-template-rows: 160px;
+}
+.s_l_book_card_media {
+  grid-area: s_l_book_card_media;
+}
+.s_l_book_card_title {
+  grid-area: s_l_book_card_title;
+}
+.s_l_book_card_text {
+  grid-area: s_l_book_card_text;
+}
+
 .s_l_song_card {
   display: grid;
   grid-gap: 10px;
