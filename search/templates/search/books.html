@@ -6,7 +6,7 @@
       <img src="{{ result.cover_art }}" height="160px" width="107px">
     </div>
     <div class="s_l_book_card_title">
-      <a class="text s_l_card_title" href="/reviews/create/book/{{result.api_id}}">{{ result.title }}</a>
+      <a class="text s_l_card_title" href="/reviews/create/book/{{result.api_id}}">{{ result.title }} by {{ result.author }}</a>
     </div>
   </div>
 {% endblock %}
