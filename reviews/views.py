@@ -7,7 +7,7 @@ from . import forms
 
 def review_list_view(request):
   reviews = []
-  for review in Review.objects.all().order_by('date')[:10][::-1]:
+  for review in Review.objects.all().order_by('date')[::-1][:10]:
     media = medias.get(review.type, review.api_id)
     if media is None:
       return HttpResponseNotFound
