@@ -1,0 +1,12 @@
+{% extends 'search/list.html' %}
+
+{% block result_card %}
+  <div class="s_l_album_card card">
+    <div class="s_l_album_card_title">
+      <a class="text s_l_card_title" href="/reviews/create/album/{{result.api_id}}">"{{ result.name }}" by {{ result.artist }}</a>
+    </div>
+    <div class="s_l_album_card_media">
+      <iframe src="https://open.spotify.com/embed?uri=spotify:album:{{ result.api_id }}" width="420px" height="250px"></iframe>
+    </div>
+  </div>
+{% endblock %}

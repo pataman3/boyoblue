@@ -1,0 +1,15 @@
+<div class="r_l_artist_card card">
+  <div class="r_l_artist_card_media">
+    <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:{{ media.api_id }}&size=detail&theme=light"
+              width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"
+              allowtransparency="true"></iframe>
+  </div>
+  <div class="r_l_artist_card_title text r_l_card_title">
+    <p>{{ review.score }}/10: {{ review.title }}</p>
+  </div>
+  <div class="r_l_artist_card_text text r_l_card_text">
+    <p>A review of "{{ media.name }}" by {{ media.artist }}</p><br>
+    <p>{{ body }}</p><br>
+    <p>Posted on {{ review.date }} by {{ review.author }}</p>
+  </div>
+</div>

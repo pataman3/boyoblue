@@ -1,0 +1,13 @@
+<div class="r_l_album_card card">
+  <div class="r_l_album_card_media">
+    <iframe src="https://open.spotify.com/embed?uri=spotify:album:{{ media.api_id }}" width="420px" height="250px"></iframe>
+  </div>
+  <div class="r_l_album_card_title text r_l_card_title">
+    <p>{{ review.score }}/10: {{ review.title }}</p>
+  </div>
+  <div class="r_l_album_card_text text r_l_card_text">
+    <p>A review of "{{ media.name }}" by {{ media.artist }}</p><br>
+    <p>{{ body }}</p><br>
+    <p>Posted on {{ review.date }} by {{ review.author }}</p>
+  </div>
+</div>

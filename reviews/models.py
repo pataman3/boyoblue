@@ -7,6 +7,8 @@ class Review(models.Model):
     ('movie', "Movie"),
     ('television', "Television"),
     ('song', "Song"),
+    ('album', "Album"),
+    ('artist', "Artist"),
     ('book', "Book")
   ])
   score = models.IntegerField()
