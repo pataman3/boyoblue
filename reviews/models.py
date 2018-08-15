@@ -3,7 +3,12 @@ from users.models import CustomUser
 
 class Review(models.Model):
   api_id = models.CharField(max_length=128)
-  type = models.CharField(max_length=16, choices=[('song', "Song"), ('movie', "Movie")])
+  type = models.CharField(max_length=16, choices=[
+    ('movie', "Movie"),
+    ('television', "Television"),
+    ('song', "Song"),
+    ('book', "Book")
+  ])
   score = models.IntegerField()
   title = models.CharField(max_length=128)
   body = models.TextField()

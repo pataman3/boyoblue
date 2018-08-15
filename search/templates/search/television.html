@@ -1,0 +1,12 @@
+{% extends 'search/list.html' %}
+
+{% block result_card %}
+  <div class="s_l_television_card card">
+    <div class="s_l_television_card_media">
+      <img src="{{ result.poster_image }}" height="160px" width="107px">
+    </div>
+    <div class="s_l_television_card_title">
+      <a class="text s_l_card_title" href="/reviews/create/television/{{result.api_id}}">{{ result.title }}</a>
+    </div>
+  </div>
+{% endblock %}
