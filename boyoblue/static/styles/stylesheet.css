@@ -1,11 +1,34 @@
-.text {
+.text, .text-xs, .text-s, .text-m, .text-l, .text-title {
   display: block;
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   margin: 0;
-  padding: 0;
+  padding: 8px 0 8px 0;
   text-align: left;
   text-decoration: none;
+  color: black;
+}
+.text-xs {
+  font-size: 12px;
+  line-height: 13px;
+}
+.text-s {
+  font-size: 16px;
+  line-height: 18px;
+}
+.text-m {
+  font-size: 24px;
+  line-height: 27px;
+}
+.text-l {
+  font-size: 32px;
+  line-height: 36px;
+}
+.text-title {
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 96px;
+  text-align: center;
 }
 
 html, body {
@@ -188,7 +211,7 @@ html, body {
   background-color: #FAFAFA;
   border: 0;
   border-radius: 6px;
-  padding: 10px;
+  padding: 30px;
 }
 
 .list_content {
