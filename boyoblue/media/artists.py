@@ -23,9 +23,9 @@ def parse_api_call(artist):
   )
 
 
-def search(query, limit):
+def search(query, limit, page):
   artists = []
-  for result in sp.search(q=query, limit=limit, type='artist')['artists']['items']:
+  for result in sp.search(q=query, limit=limit, type='artist', offset=(page - 1) * limit)['artists']['items']:
     artists.append(parse_api_call(result))
   return artists
 

@@ -27,9 +27,9 @@ def parse_api_call(album):
   )
 
 
-def search(query, limit):
+def search(query, limit, page):
   albums = []
-  for result in sp.search(q=query, limit=limit, type='album')['albums']['items']:
+  for result in sp.search(q=query, limit=limit, type='album', offset=(page - 1) * limit)['albums']['items']:
     albums.append(parse_api_call(result))
   return albums
 

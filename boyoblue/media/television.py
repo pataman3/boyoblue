@@ -22,9 +22,9 @@ def parse_api_call(show):
   )
 
 
-def search(query, limit):
+def search(query, limit, page):
   shows = []
-  for result in tv.search(query)[:limit]:
+  for result in tv.search(query, page=page)[:limit]:
     shows.append(parse_api_call(result))
   return shows
 

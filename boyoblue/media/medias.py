@@ -16,18 +16,18 @@ def get(media_type, api_key):
   else:
     return None
 
-def search(media_type, query):
+def search(media_type, query, page):
   if media_type == 'movies':
-    return movies.search(query, limit=20)
+    return movies.search(query, 20, page)
   elif media_type == 'television':
-    return television.search(query, limit=20)
+    return television.search(query, 20, page)
   elif media_type == 'songs':
-    return songs.search(query, limit=15)
+    return songs.search(query, 15, page)
   elif media_type == 'albums':
-    return albums.search(query, limit=15)
+    return albums.search(query, 15, page)
   elif media_type == 'artists':
-    return artists.search(query, limit=15)
+    return artists.search(query, 15, page)
   elif media_type == 'books':
-    return books.search(query, limit=20)
+    return books.search(query, 20, page)
   else:
     return None

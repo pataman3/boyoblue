@@ -22,9 +22,9 @@ def parse_api_call(movie):
   )
 
 
-def search(query, limit):
+def search(query, limit, page):
   movies = []
-  for result in movie.search(query)[:limit]:
+  for result in movie.search(query, page=page)[:limit]:
     movies.append(parse_api_call(result))
   return movies
 

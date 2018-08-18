@@ -26,8 +26,8 @@ def parse_api_call(result):
   )
 
 
-def search(query, limit):
-  request = service.volumes().list(source='public', q=query, maxResults=limit)
+def search(query, limit, page):
+  request = service.volumes().list(source='public', q=query, maxResults=limit, startIndex=(page - 1) * limit)
   response = request.execute()
   books = []
   for result in response['items']:

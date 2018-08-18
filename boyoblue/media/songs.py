@@ -27,9 +27,9 @@ def parse_api_call(song):
   )
 
 
-def search(query, limit):
+def search(query, limit, page):
   songs = []
-  for result in sp.search(q=query, limit=limit)['tracks']['items']:
+  for result in sp.search(q=query, limit=limit, offset=(page - 1) * limit)['tracks']['items']:
     songs.append(parse_api_call(result))
   return songs
 
