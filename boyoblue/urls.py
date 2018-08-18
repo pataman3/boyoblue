@@ -1,6 +1,7 @@
 from django.urls import include, path
 from django.contrib import admin
 from reviews import views as review_views
+from . import views
 
 app_name = "boyoblue"
 
@@ -9,6 +10,9 @@ urlpatterns = [
 
     # admin
     path('admin/', admin.site.urls),
+
+    # about us
+    path('about-us/', views.about_us),
     
     # account management
     path('accounts/', include('allauth.urls')),

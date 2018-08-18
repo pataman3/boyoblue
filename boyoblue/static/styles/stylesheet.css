@@ -52,13 +52,13 @@ html, body {
   grid-area: footer;
   display: grid;
   grid-gap: 20px;
-  grid-template-areas: ". footer_credit footer_terms .";
+  grid-template-areas: ". footer_credit footer_about_us .";
   grid-template-columns: 1fr repeat(2, max-content) 1fr;
 
   background-color: #343a40;
 }
 #footer_credit { grid-area: footer_credit; }
-#footer_terms { grid-area: footer_terms; }
+#footer_about_us { grid-area: footer_about_us; }
 
 .main {
   grid-area: main;
@@ -162,7 +162,7 @@ html, body {
   background-color: #343a40;
 }
 
-.footer p, .footer_github {
+.footer p, .footer_github, .footer_about_us_link {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   text-align: left;
@@ -172,6 +172,10 @@ html, body {
   font-size: 12px;
 }
 .footer_github:focus, .footer_github:hover {
+  color: #639bff;
+  text-decoration: underline dotted #639bff;
+}
+.footer_about_us_link:focus, .footer_about_us_link:hover {
   color: #639bff;
   text-decoration: underline dotted #639bff;
 }
