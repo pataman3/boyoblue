@@ -2,12 +2,23 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Review
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from boyoblue.media import medias
 from . import forms
 
 def review_list_view(request):
   reviews = []
-  for review in Review.objects.all().order_by('date')[::-1][:10]:
+  page_number = request.GET.get('page', 1)
+
+  paginator = Paginator(Review.objects.all().order_by('date')[::-1], 10)
+  try:
+    page = paginator.page(page_number)
+  except PageNotAnInteger:
+    page = paginator.page(1)
+  except EmptyPage:
+    page = paginator.page(paginator.num_pages)
+
+  for review in page:
     media = medias.get(review.type, review.api_id)
     if media is None:
       return HttpResponseNotFound
@@ -17,7 +28,7 @@ def review_list_view(request):
       media,  # media
       review.body[:140] + ' ... (See full review)' if len(review.body) >= 140 else review.body  # body
     ])
-  return render(request, 'reviews/list.html', {'reviews': reviews})
+  return render(request, 'reviews/list.html', {'reviews': reviews, 'paginator': page})
 
 def review_detail_view(request, pk):
   review = get_object_or_404(Review, pk=pk)
