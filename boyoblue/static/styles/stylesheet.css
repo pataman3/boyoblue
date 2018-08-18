@@ -53,7 +53,7 @@ html, body {
   display: grid;
   grid-gap: 20px;
   grid-template-areas: ". footer_about footer_credit footer_terms .";
-  grid-template-columns: 1fr repeat(2, max-content) 1fr;
+  grid-template-columns: 1fr repeat(3, max-content) 1fr;
 
   background-color: #343a40;
 }
@@ -66,7 +66,7 @@ html, body {
   display: grid;
   grid-gap: 10px;
   grid-template-areas: ". content .";
-  grid-template-columns: 1fr max-content 1fr;
+  grid-template-columns: 1fr 890px 1fr;
 
   background-color: #343a40;
 }
@@ -182,10 +182,14 @@ html, body {
 
 
 
+.content {
+  grid-area: content;
 
-
-
-
+  background-color: #FAFAFA;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+}
 
 .list_content {
   grid-area: content;
