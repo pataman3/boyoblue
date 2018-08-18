@@ -12,4 +12,13 @@
       <h1>There are no results to display</h1>
     {% endif %}
   </div>
+  <div class="paginator">
+    {% if page != 1 %}
+    <a href="?media={{ media }}s&q={{ query }}&page={{ previous_page }}">&laquo;</a>
+    {% else %}
+    <span>&laquo;</span>
+    {% endif %}
+
+    <a href="?media={{ media }}&q={{ query }}&page={{ next_page }}">&raquo;</a>
+  </div>
 {% endblock %}
