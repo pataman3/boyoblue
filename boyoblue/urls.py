@@ -11,8 +11,8 @@ urlpatterns = [
     # admin
     path('admin/', admin.site.urls),
 
-    # about us
-    path('about-us/', views.about_us),
+    # about
+    path('about/', views.about),
     
     # account management
     path('accounts/', include('allauth.urls')),
@@ -20,4 +20,7 @@ urlpatterns = [
 
     path('reviews/', include('reviews.urls')),
     path('search/', include('search.urls')),
+
+    # terms
+    path('terms/', views.terms),
 ]
