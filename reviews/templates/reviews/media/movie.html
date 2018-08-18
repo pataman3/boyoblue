@@ -8,6 +8,6 @@
   <div class="r_l_movie_card_text text r_l_card_text">
     <p>A review of {{ media.title }}</p><br>
     <p>{{ body }}</p><br>
-    <p>Posted on {{ review.date }} by {{ review.author }}</p>
+    <p>Posted {{ review.date|timesince }} ago by {{ review.author }}</p>
   </div>
 </div>
