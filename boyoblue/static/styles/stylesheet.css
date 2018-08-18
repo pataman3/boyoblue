@@ -1,16 +1,14 @@
-.text, .text-xs, .text-s, .text-m, .text-l, .text-title {
-  display: block;
+.text, .text-xs, .text-s, .text-m, .text-l, .text-title, .text-footer {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   margin: 0;
-  padding: 8px 0 8px 0;
+  padding: 0;
   text-align: left;
   text-decoration: none;
-  color: black;
 }
 .text-xs {
   font-size: 12px;
-  line-height: 13px;
+  line-height: 14px;
 }
 .text-s {
   font-size: 16px;
@@ -22,13 +20,33 @@
 }
 .text-l {
   font-size: 32px;
-  line-height: 36px;
+  font-weight: bold;
+  line-height: 48px;
 }
 .text-title {
   font-size: 64px;
   font-weight: bold;
   line-height: 96px;
   text-align: center;
+}
+.text-footer {
+  font-size: 12px;
+  line-height: 50px;
+  padding: 0;
+}
+.text-dark {
+  color: #343a40;
+}
+.text-light {
+  color: #FAFAFA;
+}
+.text-link {
+  text-decoration: underline dotted;
+  padding: 0;
+}
+.text-link:focus, .text-link:hover {
+  color: #639bff;
+  text-decoration: underline dotted #639bff;
 }
 
 html, body {
@@ -177,42 +195,44 @@ html, body {
   float: right;
 }
 
-.footer a, .footer p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
-  text-align: left;
-  text-decoration: none;
-  color: #FAFAFA;
-  line-height: 50px;
-  font-size: 12px;
-}
-.footer a:focus, .footer a:hover {
-  color: #639bff;
-  text-decoration: underline dotted #639bff;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .content {
   grid-area: content;
 
   background-color: #FAFAFA;
-  border: 0;
+  border: 3px solid #639bff;
   border-radius: 6px;
   padding: 30px;
 }
+
+.content .card {
+  background-color: #E5E5E5;
+  border-radius: 12px;
+  margin: 8px 0 8px 0;
+  padding: 7px 0 7px 0;
+}
+.content .card .text-s, .content .card .text-m {
+  padding: 2px 15px 2px 15px;
+}
+
+.content .card-divided {
+  padding: 2px 0 2px 0;
+}
+.content .card-divided .text-xs {
+  padding: 8px 10px 8px 10px;
+}
+.content .card-divided .text-link {
+  padding: 0;
+}
+
+.content .divider {
+  background-color: #FAFAFA;
+  height: 3px;
+  width: 100%;
+}
+
+
+
+
 
 .list_content {
   grid-area: content;

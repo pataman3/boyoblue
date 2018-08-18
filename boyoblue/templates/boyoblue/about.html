@@ -3,16 +3,33 @@
 
 {% block body %}
   <div class="content">
-    <p class="text-title">About us</p>
-    <p class="text-l">BoyoBlue's creators</p>
-    <p class="text-m">Bryan</p>
-    <p class="text-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p class="text-m">Peter</p>
-    <p class="text-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p class="text-l">Attributions</p>
-    <img src="/static/images/logos/spotify.png" width="200px" style="margin: 10px 0 10px 0;"/>
-    <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <img src="/static/images/logos/tmdb.svg" width="200px" style="margin: 10px 0 10px 0;"/>
-    <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="text-title text-dark">About us</p>
+    <p class="text-l text-dark" style="margin-left: 20px;">What is BoyoBlue?</p>
+    <div class="card">
+      <p class="text-m text-dark">BoyoBlue is a website designed with the goal of aggregating reviews for all forms of media. BoyoBlue was created with a focus for furthering its creators' knowledge of web development and general API usage.</p>
+    </div>
+    <p class="text-l text-dark" style="margin-left: 20px;">Who made BoyoBlue?</p>
+    <div class="card">
+      <p class="text-m text-dark">Bryan</p>
+      <p class="text-s text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="card">
+      <p class="text-m text-dark">Peter</p>
+      <p class="text-s text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <p class="text-l text-dark" style="margin-left: 20px;">Attributions</p>
+    <div class="card card-divided">
+      <p class="text-xs text-dark">The BoyoBlue team uses the Google Books API Family to provide the "Books" media category data.<br>This product uses the Google Books API Family but is not endorsed or certified by <a class="text-xs text-dark text-link" href="https://www.google.com/">Google</a> or <a class="text-xs text-dark text-link" href="https://books.google.com/">Google Books</a>.</p>
+      <div class="divider"></div>
+      <p class="text-xs text-dark">The BoyoBlue team uses the Google Fonts API to provide the fonts "Roboto" and "Roboto Mono".<br>This product uses the Google Fonts API but is not endorsed or certified by <a class="text-xs text-dark text-link" href="https://www.google.com/">Google</a> or <a class="text-xs text-dark text-link" href="https://fonts.google.com/">Google Fonts</a>.</p>
+      <div class="divider"></div>
+      <p class="text-xs text-dark">The BoyoBlue team uses Gravatar APIs to provide a user's profile picture.<br>This product uses Gravatar APIs but is not endorsed or certified by <a class="text-xs text-dark text-link" href="https://en.gravatar.com/">Gravatar</a>.</p>
+      <div class="divider"></div>
+      <p class="text-xs text-dark">The BoyoBlue team uses Heroku to host BoyoBlue.<br>This product uses Heroku but is not endorsed by <a class="text-xs text-dark text-link" href="https://www.heroku.com/">Heroku</a>.</p>
+      <div class="divider"></div>
+      <p class="text-xs text-dark">The BoyoBlue team uses the Spotify API to provide the "Albums", "Artists", and "Songs" media categories' data.<br>This product uses the Spotify API but is not endorsed or certified by <a class="text-xs text-dark text-link" href="https://www.spotify.com/">Spotify</a>.</p>
+      <div class="divider"></div>
+      <p class="text-xs text-dark">The BoyoBlue team uses the TMDb API to provide the "Movies" and "Television" media categories' data.<br>This product uses the TMDb API but is not endorsed or certified by <a class="text-xs text-dark text-link" href="https://www.themoviedb.org/">TMDb</a>.</p>
+    </div>
   </div>
 {% endblock %}
