@@ -7,7 +7,11 @@
   </div>
   <div class="r_l_book_card_text text r_l_card_text">
     <p>A review of {{ media.title }} by {{ media.author }}</p><br>
-    <p>{{ body }}</p><br>
+    <p>
+      {{ body }}
+      {% if truncate_body %}... <a href="/reviews/detail/{{ review.pk }}">(See full review)</a>{% endif %}
+    </p>
+    <br>
     <p>Posted {{ review.date|timesince }} ago by {{ review.author }}</p>
   </div>
 </div>

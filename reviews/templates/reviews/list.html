@@ -4,7 +4,7 @@
 {% block body %}
   <div class="list_content">
     {% if reviews %}
-      {% for review, review_card, media, body in reviews %}
+      {% for review, review_card, media, body, truncate_body in reviews %}
         {% include review_card %}
       {% endfor %}
       {% if paginator.has_other_pages %}

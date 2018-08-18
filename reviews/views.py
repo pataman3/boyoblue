@@ -22,11 +22,13 @@ def review_list_view(request):
     media = medias.get(review.type, review.api_id)
     if media is None:
       return HttpResponseNotFound
+    truncate_body = len(review.body) > 140
     reviews.append([
       review,  # review
       'reviews/media/{}.html'.format(review.type),  # review_card
       media,  # media
-      review.body[:140] + ' ... (See full review)' if len(review.body) >= 140 else review.body  # body
+      review.body[:140] if truncate_body else review.body,  # body
+      truncate_body  # truncate_body
     ])
   return render(request, 'reviews/list.html', {'reviews': reviews, 'paginator': page})
 
