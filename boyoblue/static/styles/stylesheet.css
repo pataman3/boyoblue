@@ -52,13 +52,14 @@ html, body {
   grid-area: footer;
   display: grid;
   grid-gap: 20px;
-  grid-template-areas: ". footer_credit footer_about_us .";
+  grid-template-areas: ". footer_about footer_credit footer_terms .";
   grid-template-columns: 1fr repeat(2, max-content) 1fr;
 
   background-color: #343a40;
 }
+#footer_about { grid-area: footer_about; }
 #footer_credit { grid-area: footer_credit; }
-#footer_about_us { grid-area: footer_about_us; }
+#footer_terms { grid-area: footer_terms; }
 
 .main {
   grid-area: main;
@@ -153,16 +154,7 @@ html, body {
   float: right;
 }
 
-.list_content {
-  grid-area: content;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, 440px);
-
-  background-color: #343a40;
-}
-
-.footer p, .footer_github, .footer_about_us_link {
+.footer a, .footer p {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   text-align: left;
@@ -171,13 +163,37 @@ html, body {
   line-height: 50px;
   font-size: 12px;
 }
-.footer_github:focus, .footer_github:hover {
+.footer a:focus, .footer a:hover {
   color: #639bff;
   text-decoration: underline dotted #639bff;
 }
-.footer_about_us_link:focus, .footer_about_us_link:hover {
-  color: #639bff;
-  text-decoration: underline dotted #639bff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.list_content {
+  grid-area: content;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 440px);
+
+  background-color: #343a40;
 }
 
 .card {
