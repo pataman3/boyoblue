@@ -13,7 +13,7 @@ class Review(models.Model):
   ])
   score = models.IntegerField()
   title = models.CharField(max_length=128)
-  body = models.TextField()
+  body = models.TextField(blank=True)
   date = models.DateTimeField(auto_now_add=True)
   author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=None)
 
