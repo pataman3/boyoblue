@@ -8,25 +8,25 @@
 }
 .text-xs {
   font-size: 12px;
-  line-height: 14px;
+  line-height: 16px;
 }
 .text-s {
   font-size: 16px;
-  line-height: 18px;
+  line-height: 20px;
 }
 .text-m {
   font-size: 24px;
-  line-height: 27px;
+  line-height: 30px;
 }
 .text-l {
   font-size: 32px;
   font-weight: bold;
-  line-height: 48px;
+  line-height: 40px;
 }
 .text-title {
   font-size: 64px;
   font-weight: bold;
-  line-height: 96px;
+  line-height: 80px;
   text-align: center;
 }
 .text-footer {
@@ -41,8 +41,9 @@
   color: #FAFAFA;
 }
 .text-link {
-  text-decoration: underline dotted;
   padding: 0;
+  text-decoration: underline dotted;
+  transition: all 0.125s ease-in-out;
 }
 .text-link:focus, .text-link:hover {
   color: #639bff;
@@ -92,7 +93,7 @@ html, body {
 .footer {
   grid-area: footer;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 15px;
   grid-template-areas: ". footer_about footer_credit footer_terms .";
   grid-template-columns: 1fr repeat(3, max-content) 1fr;
 
@@ -105,9 +106,8 @@ html, body {
 .main {
   grid-area: main;
   display: grid;
-  grid-gap: 10px;
   grid-template-areas: ". content .";
-  grid-template-columns: 1fr 890px 1fr;
+  grid-template-columns: 1fr 910px 1fr;
 
   background-color: #343a40;
 }
@@ -199,22 +199,22 @@ html, body {
   grid-area: content;
 
   background-color: #FAFAFA;
-  border-radius: 6px;
-  padding: 30px;
+  border-radius: 12px;
+  padding: 15px;
 }
-
 .content .card {
   background-color: #E5E5E5;
-  border-radius: 12px;
-  margin: 8px 0 8px 0;
-  padding: 7px 0 7px 0;
+  border-radius: 10px;
+  padding: 2px 0 2px 0;
+}
+.content .text-l {
+  padding: 30px 20px 10px 20px;
+}
+.content .text-title {
+  padding-top: 20px;
 }
 .content .card .text-s, .content .card .text-m {
-  padding: 2px 15px 2px 15px;
-}
-
-.content .card-divided {
-  padding: 2px 0 2px 0;
+  padding: 8px 15px 8px 15px;
 }
 .content .card-divided .text-xs {
   padding: 8px 10px 8px 10px;
@@ -224,8 +224,7 @@ html, body {
 }
 
 .content .divider {
-  background-color: #FAFAFA;
-  height: 3px;
+  height: 4px;
   width: 100%;
 }
 
@@ -247,6 +246,10 @@ html, body {
 .paginator > a {
   color: #FAFAFA;
   background-color: #639bff;
+  transition: all 0.125s ease-in-out;
+}
+.paginator > a:focus, .paginator > a:hover {
+  background-color: #5b6ee1;
 }
 .paginator > i {
   color: #FAFAFA;
@@ -262,7 +265,7 @@ html, body {
   grid-area: content;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, 440px);
+  grid-template-columns: repeat(2, 450px);
 
   background-color: #343a40;
 }
