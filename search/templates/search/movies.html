@@ -1,12 +1,14 @@
 {% extends 'search/list.html' %}
 
 {% block result_card %}
-  <div class="s_l_movie_card card">
-    <div class="s_l_movie_card_media">
-      <img src="{{ result.poster_image }}" height="160px" width="107px">
+  <div class="card card-1">
+    <div class="card-1-media">
+      <img src="{{ result.poster_image }}" width="120px">
     </div>
-    <div class="s_l_movie_card_title">
-      <a class="text s_l_card_title" href="/reviews/create/movie/{{result.api_id}}">{{ result.title }}</a>
+    <div class="card-1-text">
+      <a class="text-m text-dark text-link" href="/reviews/create/movie/{{result.api_id}}">
+        {{ result.title }}
+      </a>
     </div>
   </div>
 {% endblock %}

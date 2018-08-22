@@ -2,7 +2,7 @@
 {% block title %} / All reviews{% endblock %}
 
 {% block body %}
-  <div class="list_content">
+  <div class="feed_content feed_list_content">
     {% if reviews %}
       {% for review, review_card, media, body, truncate_body in reviews %}
         {% include review_card %}

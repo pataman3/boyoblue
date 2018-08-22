@@ -62,8 +62,8 @@ html, body {
                        ". . ."
                        ". main ."
                        ". footer .";
-  grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: 10px 35px 10px 1fr 50px;
+  grid-template-columns: 20px auto 20px;
+  grid-template-rows: 10px 35px 10px auto 50px;
 
   background-color: #343a40;
 }
@@ -73,7 +73,7 @@ html, body {
   display: grid;
   grid-gap: 20px;
   grid-template-areas: "header_logo header_brand header_search header_account";
-  grid-template-columns: repeat(2, max-content) 1fr max-content;
+  grid-template-columns: repeat(2, max-content) auto max-content;
 
   background-color: #343a40;
 }
@@ -83,7 +83,7 @@ html, body {
   grid-area: header_search;
   display: grid;
   grid-template-areas: "search_select search_text search_submit";
-  grid-template-columns: max-content 1fr max-content;
+  grid-template-columns: max-content auto max-content;
 }
 #header_account { grid-area: header_account; }
 #search_select { grid-area: search_select; }
@@ -95,7 +95,7 @@ html, body {
   display: grid;
   grid-gap: 15px;
   grid-template-areas: ". footer_about footer_credit footer_terms .";
-  grid-template-columns: 1fr repeat(3, max-content) 1fr;
+  grid-template-columns: auto repeat(3, max-content) auto;
 
   background-color: #343a40;
 }
@@ -107,7 +107,7 @@ html, body {
   grid-area: main;
   display: grid;
   grid-template-areas: ". content .";
-  grid-template-columns: 1fr 910px 1fr;
+  grid-template-columns: auto 910px auto;
 
   background-color: #343a40;
 }
@@ -240,6 +240,7 @@ html, body {
 
   border: 0;
   border-radius: 6px;
+  margin: 0 1px 0 1px;
   padding: 5px 15px 5px 15px;
   text-align: center;
 }
@@ -256,176 +257,39 @@ html, body {
   background-color: #343a40;
 }
 
-
-
-
-
-
-.list_content {
+.feed_list_content {
   grid-area: content;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, 450px);
-
   background-color: #343a40;
 }
-
-.card {
+.feed_detail_content {
+  grid-area: content;
+  width: 910px;
+  background-color: #343a40;
+}
+.feed_content .card {
   background-color: #FAFAFA;
   border: 0;
   border-radius: 6px;
   padding: 10px;
 }
-.r_l_card_title {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
+.feed_content .card-1-media {
+  float: left; width: 120px;
 }
-.r_l_card_text {
-  font-size: 14px;
-  line-height: 14px;
+.feed_content .card-1-text {
+  margin-left: 128px;
 }
-.s_l_card_title {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 20px;
+.feed_content .card-2-media {
+  width: auto;
 }
-
-.r_l_movie_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "r_l_movie_card_media r_l_movie_card_title"
-                       "r_l_movie_card_media r_l_movie_card_text";
-  grid-template-columns: 120px 285px;
-  grid-template-rows: 24px 1fr;
+.feed_content .card-2-text {
+  width: auto;
 }
-.r_l_movie_card_media {
-  grid-area: r_l_movie_card_media;
+.feed_content .card .text-m {
+  padding: 5px 0 5px 0;
 }
-.r_l_movie_card_title {
-  grid-area: r_l_movie_card_title;
-}
-.r_l_movie_card_text {
-  grid-area: r_l_movie_card_text;
-}
-
-.r_l_song_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "r_l_song_card_title"
-                       "r_l_song_card_text"
-                       "r_l_song_card_media ";
-  grid-template-columns: 415px;
-  grid-template-rows: 24px 1fr 80px;
-}
-.r_l_song_card_media {
-  grid-area: r_l_song_card_media;
-}
-.r_l_song_card_title {
-  grid-area: r_l_song_card_title;
-}
-.r_l_song_card_text {
-  grid-area: r_l_song_card_text;
-}
-
-.s_l_movie_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "s_l_movie_card_media s_l_movie_card_title";
-  grid-template-columns: 107px 1fr;
-  grid-template-rows: 160px;
-}
-.s_l_movie_card_media {
-  grid-area: s_l_movie_card_media;
-}
-.s_l_movie_card_title {
-  grid-area: s_l_movie_card_title;
-}
-.s_l_movie_card_text {
-  grid-area: s_l_movie_card_text;
-}
-
-.s_l_television_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "s_l_television_card_media s_l_television_card_title";
-  grid-template-columns: 107px 1fr;
-  grid-template-rows: 160px;
-}
-.s_l_television_card_media {
-  grid-area: s_l_television_card_media;
-}
-.s_l_television_card_title {
-  grid-area: s_l_television_card_title;
-}
-.s_l_television_card_text {
-  grid-area: s_l_television_card_text;
-}
-
-.s_l_book_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "s_l_book_card_media s_l_book_card_title";
-  grid-template-columns: 107px 1fr;
-  grid-template-rows: 160px;
-}
-.s_l_book_card_media {
-  grid-area: s_l_book_card_media;
-}
-.s_l_book_card_title {
-  grid-area: s_l_book_card_title;
-}
-.s_l_book_card_text {
-  grid-area: s_l_book_card_text;
-}
-
-.s_l_song_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "s_l_song_card_media s_l_song_card_title";
-  grid-template-columns: 80px 1fr;
-  grid-template-rows: 80px;
-}
-.s_l_song_card_media {
-  grid-area: s_l_song_card_media;
-}
-.s_l_song_card_title {
-  grid-area: s_l_song_card_title;
-}
-.s_l_song_card_text {
-  grid-area: s_l_song_card_text;
-}
-
-.s_l_album_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "s_l_album_card_media s_l_album_card_title";
-  grid-template-columns: 80px 1fr;
-  grid-template-rows: 80px;
-}
-.s_l_album_card_media {
-  grid-area: s_l_album_card_media;
-}
-.s_l_album_card_title {
-  grid-area: s_l_album_card_title;
-}
-.s_l_album_card_text {
-  grid-area: s_l_album_card_text;
-}
-
-.s_l_artist_card {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas: "s_l_artist_card_media s_l_artist_card_title";
-  grid-template-columns: 80px 1fr;
-  grid-template-rows: 80px;
-}
-.s_l_artist_card_media {
-  grid-area: s_l_artist_card_media;
-}
-.s_l_artist_card_title {
-  grid-area: s_l_artist_card_title;
-}
-.s_l_artist_card_text {
-  grid-area: s_l_artist_card_text;
+.feed_content .card .text-s {
+  padding-bottom: 10px;
 }
