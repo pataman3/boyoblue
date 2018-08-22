@@ -3,32 +3,35 @@
 
 {% block body %}
   <div class="feed_content feed_list_content">
+    {% if not user.is_authenticated %}
+      <div class="card-alert">
+        <p class="text-xs text-light">To post a review search for a piece of media content and click its title to be brought to the review creation page. Note: you must be logged in post a review.</p>
+      </div>
+    {% endif %}
     {% if reviews %}
       {% for review, review_card, media, body, truncate_body in reviews %}
         {% include review_card %}
       {% endfor %}
       {% if paginator.has_other_pages %}
-      <div class="paginator">
-        {% if paginator.has_previous %}
-        <a class="text-m" href="?page={{ reviews.previous_page_number }}"><i class="fas fa-caret-left"></i></a>
-        {% else %}
-        <i class="fas fa-caret-left" style="font-size: 24px;"></i>
-        {% endif %}
-
-        {% for i in paginator.paginator.page_range %}
-        {% if reviews.number == i %}
-        <a class="text-m" href="?page={{ i }}">{{ i }}</a>
-        {% else %}
-        <a class="text-m" href="?page={{ i }}">{{ i }}</a>
-        {% endif %}
-        {% endfor %}
-
-        {% if paginator.has_next %}
-        <a class="text-m" href="?page={{ users.next_page_number }}"><i class="fas fa-caret-right"></i></a>
-        {% else %}
-        <i class="fas fa-caret-right" style="font-size: 24px;"></i>
-        {% endif %}
-      </div>
+        <div class="paginator">
+          {% if paginator.has_previous %}
+            <a class="text-m" href="?page={{ reviews.previous_page_number }}"><i class="fas fa-caret-left"></i></a>
+          {% else %}
+            <i class="fas fa-caret-left" style="font-size: 24px;"></i>
+          {% endif %}
+          {% for i in paginator.paginator.page_range %}
+            {% if reviews.number == i %}
+              <a class="text-m" href="?page={{ i }}">{{ i }}</a>
+            {% else %}
+              <a class="text-m" href="?page={{ i }}">{{ i }}</a>
+            {% endif %}
+          {% endfor %}
+          {% if paginator.has_next %}
+            <a class="text-m" href="?page={{ users.next_page_number }}"><i class="fas fa-caret-right"></i></a>
+          {% else %}
+            <i class="fas fa-caret-right" style="font-size: 24px;"></i>
+          {% endif %}
+        </div>
       {% endif %}
     {% else %}
       <h1>There are no reviews to display</h1>
