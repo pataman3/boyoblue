@@ -56,4 +56,4 @@ def review_create_view(request, api_id="", type=None):
       return redirect('home')
   elif request.method == 'GET':
     form = forms.CreateReview({'api_id': api_id, 'type': type})
-  return render(request, 'reviews/create.html', {'form': form})
+  return render(request, 'reviews/create.html', {'api_id': api_id, 'type': type})

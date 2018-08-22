@@ -194,6 +194,9 @@ html, body {
 #account_logout {
   float: right;
 }
+#account_logout_button {
+  cursor:pointer;
+}
 
 .content {
   grid-area: content;

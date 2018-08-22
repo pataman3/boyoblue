@@ -30,7 +30,10 @@
         <img class="gravatar" src="{% gravatar_url user.email 35 %}"/>
       </a>
       <a role="button" id="account_settings" href=""><i class="fas fa-cog"></i>Settings</a>
-      <a role="button" id="account_logout" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>Log out</a>
+      <form method="post" id="account_logout" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        <button type="submit" id="account_logout_button"><i class="fas fa-sign-out-alt"></i>Log out</button>
+      </form>
     {% else %}
       <a role="button" id="account_login" href="{% url 'account_login' %}"><i class="fas fa-sign-in-alt"></i>Log in</a>
       <a role="button" id="account_signup" href="{% url 'account_signup' %}"><i class="fas fa-user-plus"></i>Sign up</a>
