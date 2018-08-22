@@ -1,8 +1,30 @@
 {% extends 'boyoblue/core.html' %}
 {% block title %} / All reviews{% endblock %}
 
+{% load static %}
+
 {% block body %}
   <div class="feed_content feed_list_content">
+    <div class="card-alert">
+      {% if media == "albums" %}
+        <p class="text-xs text-light">BoyoBlue album search functionality is provided by <a class="text-xs text-light text-link" href="https://www.spotify.com/">Spotify</a>.</p>
+        <img src="/static/images/logos/spotify.png" width="100px;"/>
+      {% elif media == "artists" %}
+        <p class="text-xs text-light">BoyoBlue artist search functionality is provided by <a class="text-xs text-light text-link" href="https://www.spotify.com/">Spotify</a>.</p>
+        <img src="/static/images/logos/spotify.png" width="100px;"/>
+      {% elif media == "books" %}
+        <p class="text-xs text-light">BoyoBlue book search functionality is provided by <a class="text-xs text-light text-link" href="https://books.google.com/">Google Books</a>.</p>
+      {% elif media == "movies" %}
+        <p class="text-xs text-light">BoyoBlue movie search functionality is provided by <a class="text-xs text-light text-link" href="https://www.themoviedb.org/">TMDb</a>.</p>
+        <img src="/static/images/logos/tmdb.svg" width="100px;"/>
+      {% elif media == "songs" %}
+        <p class="text-xs text-light">BoyoBlue song search functionality is provided by <a class="text-xs text-light text-link" href="https://www.spotify.com/">Spotify</a>.</p>
+        <img src="/static/images/logos/spotify.png" width="100px;"/>
+      {% elif media == "television" %}
+        <p class="text-xs text-light">BoyoBlue television search functionality is provided by <a class="text-xs text-light text-link" href="https://www.themoviedb.org/">TMDb</a>.</p>
+        <img src="/static/images/logos/tmdb.svg" width="100px;"/>
+      {% endif %}
+    </div>
     {% if results %}
       {% for result in results %}
         {% block result_card %}
@@ -14,11 +36,10 @@
   </div>
   <div class="paginator">
     {% if page != 1 %}
-    <a class="text-m" href="?media={{ media }}&q={{ query }}&page={{ previous_page }}"><i class="fas fa-caret-left"></i></a>
+      <a class="text-m" href="?media={{ media }}&q={{ query }}&page={{ previous_page }}"><i class="fas fa-caret-left"></i></a>
     {% else %}
-    <i class="fas fa-caret-left" style="font-size: 24px;"></i>
+      <i class="fas fa-caret-left" style="font-size: 24px;"></i>
     {% endif %}
-
     <a class="text-m" href="?media={{ media }}&q={{ query }}&page={{ next_page }}"><i class="fas fa-caret-right"></i></a>
   </div>
 {% endblock %}
