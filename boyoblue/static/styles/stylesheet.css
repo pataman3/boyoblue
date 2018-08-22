@@ -41,7 +41,6 @@
   color: #FAFAFA;
 }
 .text-link {
-  padding: 0;
   text-decoration: underline dotted;
   transition: all 0.125s ease-in-out;
 }
@@ -175,7 +174,7 @@ html, body {
 }
 #account_login {
   background-color: #343a40;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 #account_login:focus, #account_login:hover {
   background-color: #FAFAFA;
@@ -185,11 +184,11 @@ html, body {
   background-color: #5b6ee1;
 }
 #account_settings {
-  margin-right: 5px;
+  margin-right: 6px;
 }
 .gravatar {
   border-radius: 6px;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 #account_logout {
   float: right;
@@ -272,6 +271,10 @@ html, body {
   width: 910px;
   background-color: #343a40;
 }
+.feed_content img, .feed_content iframe {
+  margin: 0;
+  padding: 0;
+}
 .feed_content .card {
   background-color: #FAFAFA;
   border: 0;
@@ -284,15 +287,12 @@ html, body {
 .feed_content .card-1-text {
   margin-left: 128px;
 }
-.feed_content .card-2-media {
+.feed_content .card-2 div {
   width: auto;
 }
-.feed_content .card-2-text {
-  width: auto;
+.feed_content .card-2 .text-m {
+  padding-top: 5px;
 }
-.feed_content .card .text-m {
-  padding: 5px 0 5px 0;
-}
-.feed_content .card .text-s {
-  padding-bottom: 10px;
+.feed_content .card .text-xs {
+  padding-top: 3px;
 }
