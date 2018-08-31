@@ -19,7 +19,7 @@
       A review of the book "{{ media.title }}" by {{ media.author }}
     </p>
     <p class="text-xs text-dark">
-      Posted {{ review.date|timesince }} ago by {{ review.author }}
+      Posted {{ review.date|timesince }} ago by <a class="text-xs text-dark text-link" href="/users/{{ review.author }}">{{ review.author }}</a>
     </p>
   </div>
 </div>

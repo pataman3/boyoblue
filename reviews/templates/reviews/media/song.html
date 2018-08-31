@@ -19,7 +19,7 @@
       A review of the song "{{ media.name }}" by {{ media.artist }}
     </p>
     <p class="text-xs text-dark">
-      Posted {{ review.date|timesince }} ago by {{ review.author }}
+      Posted {{ review.date|timesince }} ago by <a class="text-xs text-dark text-link" href="/users/{{ review.author }}">{{ review.author }}</a>
     </p>
   </div>
 </div>
