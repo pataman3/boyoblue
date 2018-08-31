@@ -45,7 +45,7 @@ def review_detail_view(request, pk):
     'body': review.body
   })
 
-@login_required(login_url='accounts:login')
+@login_required(login_url='/accounts/login')
 def review_create_view(request, api_id="", type=None):
   if request.method == 'POST':
     form = forms.CreateReview(request.POST)
