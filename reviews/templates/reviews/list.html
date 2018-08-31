@@ -15,19 +15,19 @@
       {% if paginator.has_other_pages %}
         <div class="paginator">
           {% if paginator.has_previous %}
-            <a class="text-m" href="?page={{ reviews.previous_page_number }}"><i class="fas fa-caret-left"></i></a>
+            <a class="text-m" href="?page={{ paginator.previous_page_number }}"><i class="fas fa-caret-left"></i></a>
           {% else %}
             <i class="fas fa-caret-left" style="font-size: 24px;"></i>
           {% endif %}
           {% for i in paginator.paginator.page_range %}
-            {% if reviews.number == i %}
-              <a class="text-m" href="?page={{ i }}">{{ i }}</a>
+            {% if paginator.number == i %}
+              <p class="text-m">{{ i }}</p>
             {% else %}
               <a class="text-m" href="?page={{ i }}">{{ i }}</a>
             {% endif %}
           {% endfor %}
           {% if paginator.has_next %}
-            <a class="text-m" href="?page={{ users.next_page_number }}"><i class="fas fa-caret-right"></i></a>
+            <a class="text-m" href="?page={{ paginator.next_page_number }}"><i class="fas fa-caret-right"></i></a>
           {% else %}
             <i class="fas fa-caret-right" style="font-size: 24px;"></i>
           {% endif %}
