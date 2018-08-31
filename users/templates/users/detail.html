@@ -1,12 +1,42 @@
-{% extends 'reviews/reviews.html' %}
-{% block title %} / [PLACEHOLDER]{% endblock %}
+{% extends 'boyoblue/core.html' %}
+{% block title %} {{ user }}'s reviews{% endblock %}
 
-{% block content %}
-<div class="container-fluid bg-dark">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
-    
+{% block body %}
+  <h1 class="text-light">Reviews by {{ user }}</h1>
+
+  <div class="feed_content feed_list_content">
+    {% if not user.is_authenticated %}
+      <div class="card-alert">
+        <p class="text-xs text-light">To post a review search for a piece of media content and click its title to be brought to the review creation page. Note: you must be logged in post a review.</p>
+      </div>
+    {% endif %}
+    {% if reviews %}
+      {% for review, review_card, media, body, truncate_body in reviews %}
+        {% include review_card %}
+      {% endfor %}
+      {% if paginator.has_other_pages %}
+        <div class="paginator">
+          {% if paginator.has_previous %}
+            <a class="text-m" href="?page={{ paginator.previous_page_number }}"><i class="fas fa-caret-left"></i></a>
+          {% else %}
+            <i class="fas fa-caret-left" style="font-size: 24px;"></i>
+          {% endif %}
+          {% for i in paginator.paginator.page_range %}
+            {% if paginator.number == i %}
+              <p class="text-m">{{ i }}</p>
+            {% else %}
+              <a class="text-m" href="?page={{ i }}">{{ i }}</a>
+            {% endif %}
+          {% endfor %}
+          {% if paginator.has_next %}
+            <a class="text-m" href="?page={{ paginator.next_page_number }}"><i class="fas fa-caret-right"></i></a>
+          {% else %}
+            <i class="fas fa-caret-right" style="font-size: 24px;"></i>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% else %}
+      <h1>There are no reviews to display</h1>
+    {% endif %}
   </div>
-  <div class="col-sm-3"></div>
-</div>
 {% endblock %}
