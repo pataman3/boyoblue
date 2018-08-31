@@ -52,8 +52,19 @@ def review_create_view(request, api_id="", type=None):
     if form.is_valid():
       instance = form.save(commit=False)
       instance.author = request.user
-      instance.save()
+
+      media = instance.type
+      id = instance.api_id
+      try:
+        api_obj = medias.get(media, id)
+        if api_obj is None:
+          raise TypeError
+        instance.save()
+      except:
+        print("Invalid media / id pair")
+
       return redirect('home')
+
   elif request.method == 'GET':
     form = forms.CreateReview({'api_id': api_id, 'type': type})
   return render(request, 'reviews/create.html', {'api_id': api_id, 'type': type})
