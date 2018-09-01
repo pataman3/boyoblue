@@ -3,5 +3,4 @@
 .vscode/*
 db.sqlite3
 local_settings.py
-boyoblue/staticfiles/*
-!boyoblue/staticfiles/placeholder.txt
+staticfiles/
