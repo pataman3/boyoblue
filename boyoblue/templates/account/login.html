@@ -5,31 +5,44 @@
 {% load account socialaccount %}
 
 {% block body %}
-  <div class="content">
+  <div class="form_content">
+    <div class="full-width">
+      <p class="text-l text-dark">Log in</p>
+    </div>
     {% get_providers as socialaccount_providers %}
     {% if socialaccount_providers %}
-      <p>{% blocktrans with site.name as site_name %}Please sign in with one
-      of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-      for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+      <div class="full-width">
+        <p class="text-s text-dark">{% blocktrans with site.name as site_name %}Please sign in with one of your existing third party accounts. Or, <a class="text-s text-dark text-link" href="{{ signup_url }}">sign up</a> for a BoyoBlue account and log in below:{% endblocktrans %}</p>
+      </div>
+      
       <div class="socialaccount_ballot">
         <ul class="socialaccount_providers">
           {% include "socialaccount/snippets/provider_list.html" with process="login" %}
         </ul>
-        <div class="login-or">{% trans 'or' %}</div>
       </div>
       {% include "socialaccount/snippets/login_extra.html" %}
       {% else %}
         <p>{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-      {% endif %}
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
+    {% endif %}
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      <div class="form_content_fields">
+        <div class="labels">
+          <label for="id_login">Username:</label>
+          <label for="id_password">Password:</label>
+        </div>
+        <div class="fields">
+          <input type="text" id="id_login" name="login" placeholder="Username" autofocus="autofocus" maxlength="150" required>
+          <input type="password" id="id_password" name="password" placeholder="Password" required>
+        </div>
+      </div>
+      <div class="full-width">
+        <button class="primaryAction" type="submit">{% trans "Log in" %}</button>
+      </div>
+      <div class="full-width">
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-      </form>
+      </div>
+    </form>
   </div>
 {% endblock %}

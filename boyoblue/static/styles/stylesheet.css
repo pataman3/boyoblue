@@ -93,14 +93,13 @@ html, body {
   grid-area: footer;
   display: grid;
   grid-gap: 15px;
-  grid-template-areas: ". footer_about footer_credit footer_terms .";
-  grid-template-columns: auto repeat(3, max-content) auto;
+  grid-template-areas: ". footer_about footer_credit .";
+  grid-template-columns: auto repeat(2, max-content) auto;
 
   background-color: #343a40;
 }
 #footer_about { grid-area: footer_about; }
 #footer_credit { grid-area: footer_credit; }
-#footer_terms { grid-area: footer_terms; }
 
 .main {
   grid-area: main;
@@ -305,4 +304,71 @@ html, body {
   border-radius: 6px;
   padding: 15px 5px 15px 5px;
   vertical-align: middle;
+}
+
+.form_content {
+  grid-area: content;
+  width: 400px;
+  margin: 0 255px 0 255px;
+  background-color: #FAFAFA;
+  border: 0;
+  border-radius: 6px;
+  padding: 20px;
+}
+.form_content .full-width {
+  text-align: center;
+  width: 100%;
+}
+.form_content .full-width > * {
+  margin: 5px 0 5px 0;
+}
+.form_content .full-width > button {
+  padding: 10px;
+}
+.form_content label, .form_content input, .form_content a, .form_content button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 20px;
+  color: #343a40;
+}
+.form_content a {
+  text-decoration: underline dotted;
+  transition: all 0.125s ease-in-out;
+}
+.form_content a:focus, .form_content a:hover {
+  color: #639bff;
+  text-decoration: underline dotted #639bff;
+}
+.form_content input, .form_content button {
+  border: 0;
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.form_content button {
+  background-color: #639bff;
+  color: #FAFAFA;
+}
+.form_content_fields {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "labels fields";
+  grid-template-columns: 120px 250px;
+}
+.fields { grid-area: fields; }
+.labels { grid-area: labels; }
+
+.fields input, .labels label {
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+.fields input {
+  padding: 10px;
+  background-color: #E5E5E5;
+}
+.labels label {
+  line-height: 50px;
+  text-align: right;
 }
