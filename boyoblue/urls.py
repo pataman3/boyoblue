@@ -20,7 +20,4 @@ urlpatterns = [
 
     path('reviews/', include('reviews.urls')),
     path('search/', include('search.urls')),
-
-    # terms
-    path('terms/', views.terms),
 ]
