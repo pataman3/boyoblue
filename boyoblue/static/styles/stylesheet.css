@@ -3,7 +3,6 @@
   font-weight: normal;
   margin: 0;
   padding: 0;
-  text-align: left;
   text-decoration: none;
 }
 .text-xs {
@@ -47,6 +46,15 @@
 .text-link:focus, .text-link:hover {
   color: #639bff;
   text-decoration: underline dotted #639bff;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
 }
 
 html, body {
@@ -313,7 +321,7 @@ html, body {
   background-color: #FAFAFA;
   border: 0;
   border-radius: 6px;
-  padding: 20px;
+  padding: 15px;
 }
 .form_content .full-width {
   text-align: center;
@@ -348,18 +356,21 @@ html, body {
   padding-right: 10px;
 }
 .form_content button {
+  transition: all 0.125s ease-in-out;
   background-color: #639bff;
   color: #FAFAFA;
+}
+.form_content button:focus, .form_content button:hover {
+  background-color: #5b6ee1;
 }
 .form_content_fields {
   display: grid;
   grid-gap: 10px;
   grid-template-areas: "labels fields";
-  grid-template-columns: 120px 250px;
+  grid-template-columns: 130px 240px;
 }
 .fields { grid-area: fields; }
 .labels { grid-area: labels; }
-
 .fields input, .labels label {
   width: 100%;
   margin: 5px 0 5px 0;
@@ -367,8 +378,15 @@ html, body {
 .fields input {
   padding: 10px;
   background-color: #E5E5E5;
+  width: 180px;
 }
 .labels label {
-  line-height: 50px;
+  display: block;
+  line-height: 43px;
   text-align: right;
+  width: 130px;
+}
+.form_content_fields a {
+  display: block;
+  margin: 20px 0 0 0;
 }

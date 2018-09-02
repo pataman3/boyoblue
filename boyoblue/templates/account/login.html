@@ -7,24 +7,15 @@
 {% block body %}
   <div class="form_content">
     <div class="full-width">
-      <p class="text-l text-dark">Log in</p>
+      <p class="text-l text-dark center">Log in</p>
     </div>
-    {% get_providers as socialaccount_providers %}
-    {% if socialaccount_providers %}
-      <div class="full-width">
-        <p class="text-s text-dark">{% blocktrans with site.name as site_name %}Please sign in with one of your existing third party accounts. Or, <a class="text-s text-dark text-link" href="{{ signup_url }}">sign up</a> for a BoyoBlue account and log in below:{% endblocktrans %}</p>
-      </div>
-      
-      <div class="socialaccount_ballot">
-        <ul class="socialaccount_providers">
-          {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-        </ul>
-      </div>
-      {% include "socialaccount/snippets/login_extra.html" %}
-      {% else %}
-        <p>{% blocktrans %}If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-    {% endif %}
+    <div class="full-width">
+      <p class="text-s text-dark center">{% blocktrans with site.name as site_name %}Please sign in with one of your existing third party accounts. Or, <a class="text-s text-dark text-link" href="{{ signup_url }}">sign up</a> for a BoyoBlue account and log in below:{% endblocktrans %}</p>
+    </div>
+    <div class="full-width">
+      <a href="/accounts/google/login/?process=login"><img src="/static/images/logos/google_auth.png" onmouseover="this.src='/static/images/logos/google_auth_hover.png'"
+        onmouseout="this.src='/static/images/logos/google_auth.png'"width="200px"/></a>
+    </div>
     <form class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
       <div class="form_content_fields">
