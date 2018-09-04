@@ -29,7 +29,6 @@
       <a href="{% url 'users:detail' user.username %}">
         <img class="gravatar" src="{% gravatar_url user.email 35 %}"/>
       </a>
-      <a role="button" id="account_settings" href=""><i class="fas fa-cog"></i>Settings</a>
       <form method="post" id="account_logout" action="{% url 'account_logout' %}">
         {% csrf_token %}
         <button type="submit" id="account_logout_button"><i class="fas fa-sign-out-alt"></i>Log out</button>

@@ -160,7 +160,7 @@ html, body {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
-#account_login, #account_signup, #account_settings, #account_logout {
+#account_login, #account_signup, #account_logout {
   display: block;
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
@@ -187,11 +187,8 @@ html, body {
   background-color: #FAFAFA;
   color: #343a40;
 }
-#account_signup:focus, #account_signup:hover, #account_settings:focus, #account_settings:hover, #account_logout:focus, #account_logout:hover {
+#account_signup:focus, #account_signup:hover, #account_logout:focus, #account_logout:hover {
   background-color: #5b6ee1;
-}
-#account_settings {
-  margin-right: 6px;
 }
 .gravatar {
   border-radius: 6px;
@@ -389,4 +386,11 @@ html, body {
 .form_content_fields a {
   display: block;
   margin: 20px 0 0 0;
+}
+
+#account_logout {
+  border: 0;
+  border-radius: 6px;
+  padding-left: 0;
+  padding-right: 0;
 }
