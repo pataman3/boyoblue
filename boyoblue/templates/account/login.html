@@ -10,11 +10,11 @@
       <p class="text-l text-dark center">Log in</p>
     </div>
     <div class="full-width">
-      <p class="text-s text-dark center">Please sign in with one of your existing third party accounts. Or, <a class="text-s text-dark text-link" href="{{ signup_url }}">sign up</a> for a BoyoBlue account and log in below:</p>
+      <p class="text-s text-dark center">We support signing in using <a class="text-s text-dark text-link" href="https://gravatar.com/">Gravatar</a> and <a class="text-s text-dark text-link" href="/accounts/google/login/?process=login">Google</a>. Alternatively, <a class="text-s text-dark text-link" href="{{ signup_url }}">sign up</a> for a BoyoBlue account and log in below:</p>
     </div>
     <div class="full-width">
-      <a href="/accounts/google/login/?process=login"><img src="/static/images/logos/google_auth.png" onmouseover="this.src='/static/images/logos/google_auth_hover.png'"
-        onmouseout="this.src='/static/images/logos/google_auth.png'"width="200px"/></a>
+      <a href="/accounts/google/login/?process=login"><img src="https://cdn.jsdelivr.net/gh/pataman3/boyoblue@v1/boyoblue/static/images/logos/google_auth.png" onmouseover="this.src='https://cdn.jsdelivr.net/gh/pataman3/boyoblue@v1/boyoblue/static/images/logos/google_auth_hover.png'"
+        onmouseout="this.src='https://cdn.jsdelivr.net/gh/pataman3/boyoblue@v1/boyoblue/static/images/logos/google_auth.png'"width="200px"/></a>
     </div>
     <form class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
