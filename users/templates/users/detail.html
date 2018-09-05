@@ -2,9 +2,10 @@
 {% block title %} {{ user }}'s reviews{% endblock %}
 
 {% block body %}
-  <h1 class="text-light">Reviews by {{ user }}</h1>
-
   <div class="feed_content feed_list_content">
+    <div class="card-alert">
+      <p class="text-xs text-light">Reviews posted by <i>{{ user }}</i></p>
+    </div>
     {% if not user.is_authenticated %}
       <div class="card-alert">
         <p class="text-xs text-light">To post a review search for a piece of media content and click its title to be brought to the review creation page. Note: you must be logged in post a review.</p>

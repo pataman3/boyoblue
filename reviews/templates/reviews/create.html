@@ -1,24 +1,30 @@
 {% extends 'boyoblue/core.html' %}
-{% block title %} / Create a review{% endblock %}
+{% block title %} / Create review{% endblock %}
+
 {% block body %}
-<div class="container-fluid bg-dark">
-  <div class="card">
-    <form action="/reviews/create/" method="post">
+  <div class="form_content">
+    <div class="full-width">
+      <p class="text-l text-dark center">Create review</p>
+    </div>
+    <form class="create" action="/reviews/create/" method="post"">
       {% csrf_token %}
       <input type="hidden" name="api_id" value="{{ api_id }}">
       <input type="hidden" name="type" value="{{ type }}">
-
-      <p>Score (1 to 10):</p>
-      <input type="number" name="score" min="1" max="10">
-
-      <p>Review title:</p>
-      <input type="text" name="title" maxlength="128" required>
-
-      <p>Review body (optional):</p>
-      <textarea name="body" cols="40" rows="10"></textarea>
-
-      <button type="submit" class="btn btn-primary">Create review</button>
+      <div class="form_content_fields">
+        <div class="labels">
+          <label for="id_score">Score:</label>
+          <label for="id_title">Title:</label>
+          <label for="id_body">Body:</label>
+        </div>
+        <div class="fields">
+          <input type="number" id="id_score" name="score" min="1" max="10" required>
+          <input type="text" id="id_title" name="title" maxlength="128" required>
+          <textarea id="id_body" name="body" cols="40" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="full-width">
+        <button type="submit">Create review</button>
+      </div>
     </form>
   </div>
-</div>
 {% endblock %}

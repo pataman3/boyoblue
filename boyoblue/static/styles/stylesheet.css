@@ -3,7 +3,6 @@
   font-weight: normal;
   margin: 0;
   padding: 0;
-  text-align: left;
   text-decoration: none;
 }
 .text-xs {
@@ -47,6 +46,15 @@
 .text-link:focus, .text-link:hover {
   color: #639bff;
   text-decoration: underline dotted #639bff;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
 }
 
 html, body {
@@ -93,14 +101,13 @@ html, body {
   grid-area: footer;
   display: grid;
   grid-gap: 15px;
-  grid-template-areas: ". footer_about footer_credit footer_terms .";
-  grid-template-columns: auto repeat(3, max-content) auto;
+  grid-template-areas: ". footer_about footer_credit .";
+  grid-template-columns: auto repeat(2, max-content) auto;
 
   background-color: #343a40;
 }
 #footer_about { grid-area: footer_about; }
 #footer_credit { grid-area: footer_credit; }
-#footer_terms { grid-area: footer_terms; }
 
 .main {
   grid-area: main;
@@ -153,7 +160,7 @@ html, body {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
-#account_login, #account_signup, #account_settings, #account_logout {
+#account_login, #account_signup, #account_logout {
   display: block;
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
@@ -180,11 +187,8 @@ html, body {
   background-color: #FAFAFA;
   color: #343a40;
 }
-#account_signup:focus, #account_signup:hover, #account_settings:focus, #account_settings:hover, #account_logout:focus, #account_logout:hover {
+#account_signup:focus, #account_signup:hover, #account_logout:focus, #account_logout:hover {
   background-color: #5b6ee1;
-}
-#account_settings {
-  margin-right: 6px;
 }
 .gravatar {
   border-radius: 6px;
@@ -305,4 +309,88 @@ html, body {
   border-radius: 6px;
   padding: 15px 5px 15px 5px;
   vertical-align: middle;
+}
+
+.form_content {
+  grid-area: content;
+  width: 400px;
+  margin: 0 255px 0 255px;
+  background-color: #FAFAFA;
+  border: 0;
+  border-radius: 6px;
+  padding: 15px;
+}
+.form_content .full-width {
+  text-align: center;
+  width: 100%;
+}
+.form_content .full-width > * {
+  margin: 5px 0 5px 0;
+}
+.form_content .full-width > button {
+  padding: 10px;
+}
+.form_content label, .form_content input, .form_content a, .form_content button, .form_content textarea {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 20px;
+  color: #343a40;
+}
+.form_content a {
+  text-decoration: underline dotted;
+  transition: all 0.125s ease-in-out;
+}
+.form_content a:focus, .form_content a:hover {
+  color: #639bff;
+  text-decoration: underline dotted #639bff;
+}
+.form_content input, .form_content button, .form_content textarea {
+  border: 0;
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.form_content button {
+  transition: all 0.125s ease-in-out;
+  background-color: #639bff;
+  color: #FAFAFA;
+}
+.form_content button:focus, .form_content button:hover {
+  background-color: #5b6ee1;
+}
+.form_content_fields {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "labels fields";
+  grid-template-columns: 130px 240px;
+}
+.fields { grid-area: fields; }
+.labels { grid-area: labels; }
+.fields input, .fields textarea, .labels label {
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+.fields input, .fields textarea {
+  padding: 10px;
+  background-color: #E5E5E5;
+  width: 180px;
+}
+.labels label {
+  display: block;
+  line-height: 43px;
+  text-align: right;
+  width: 130px;
+}
+.form_content_fields a {
+  display: block;
+  margin: 20px 0 0 0;
+}
+
+#account_logout {
+  border: 0;
+  border-radius: 6px;
+  padding-left: 0;
+  padding-right: 0;
 }
